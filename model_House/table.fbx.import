@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfl2t3fykn5yv"
+uid="uid://dc18g1jaaog7c"
 path="res://.godot/imported/table.fbx-8950510dbcba16cd1d91a8d083a01f3b.scn"
 
 [deps]
@@ -29,18 +29,6 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"materials": {
-"Madera1": {
-"use_external/enabled": true,
-"use_external/path": "res://model_House/Madera1.tres"
-}
-},
-"nodes": {
-"PATH:RootNode/Mesa": {
-"import/skip_import": true
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
