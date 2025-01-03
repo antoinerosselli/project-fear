@@ -1,63 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7ifffa1oq6ok"]
+[gd_scene load_steps=4 format=3 uid="uid://b7ifffa1oq6ok"]
 
 [ext_resource type="Script" path="res://Scene/bumpers.gd" id="1_hxbka"]
 [ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_sps8u"]
 [ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Scene/neighing-of-a-horse-154724.mp3" id="3_muw33"]
-
-[sub_resource type="Shader" id="Shader_xawtd"]
-code = "shader_type spatial;
-render_mode vertex_lighting, skip_vertex_transform, 
-			specular_phong, diffuse_lambert_wrap;
-
-uniform sampler2D albedo: hint_black_albedo;
-uniform sampler2D specular: hint_black;
-uniform sampler2D emission: hint_black;
-
-uniform float jitter: hint_range(0.0, 1.0) = 0.5;
-uniform bool jitter_z_coordinate = true;
-uniform bool jitter_depth_independent = true;
-uniform bool affine_texture_mapping = true;
-uniform float alpha_scissor: hint_range(0.0, 1.0) = 1.0;
-
-void vertex() {
-	VERTEX = (MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
-	
-	float z_orig = VERTEX.z;
-	float i = (1.0 - jitter) * min(VIEWPORT_SIZE.x, VIEWPORT_SIZE.y) / 2.0;
-	
-	if (jitter_depth_independent) {
-		float w = (PROJECTION_MATRIX * vec4(VERTEX, 1.0)).w;
-		VERTEX = round(VERTEX / w * i) / i * w;
-	} else {
-		VERTEX = round(VERTEX * i) / i;
-	}
-	
-	if (!jitter_z_coordinate) {
-		VERTEX.z = z_orig;
-	}
-
-	if (affine_texture_mapping) {
-		UV *= VERTEX.z;
-	}
-}
-
-void fragment() {
-	vec2 uv = UV;
-	
-	if (affine_texture_mapping) {
-		uv /= VERTEX.z;
-	}
-	
-	ALBEDO = texture(albedo, uv).rgb;
-	ALPHA = texture(albedo, uv).a;
-	ALPHA_SCISSOR = alpha_scissor;
-	EMISSION = texture(emission, uv).rgb;
-	SPECULAR = texture(specular, uv).r;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0dlbn"]
-render_priority = 0
-shader = SubResource("Shader_xawtd")
 
 [node name="Bumpers" type="Control"]
 layout_mode = 3
@@ -77,8 +22,7 @@ offset_bottom = 656.0
 color = Color(0, 0.209065, 0.192006, 1)
 
 [node name="Image" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0dlbn")
-position = Vector2(568, 304)
+position = Vector2(368, 312)
 scale = Vector2(0.542636, 0.495812)
 texture = ExtResource("1_sps8u")
 
