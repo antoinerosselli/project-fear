@@ -22,7 +22,7 @@ offset_bottom = 656.0
 color = Color(0, 0.209065, 0.192006, 1)
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(368, 312)
+position = Vector2(568, 304)
 scale = Vector2(0.542636, 0.495812)
 texture = ExtResource("1_sps8u")
 

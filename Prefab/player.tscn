@@ -9,28 +9,29 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
-shader_parameter/resolution = Vector2(320, 180)
-shader_parameter/scan_line_amount = 1.0
-shader_parameter/warp_amount = 0.1
+shader_parameter/resolution = Vector2(430, 280)
+shader_parameter/scan_line_amount = 0.371
+shader_parameter/warp_amount = 0.0
 shader_parameter/noise_amount = 0.03
 shader_parameter/interference_amount = 0.2
 shader_parameter/grille_amount = 0.1
 shader_parameter/grille_size = 1.0
-shader_parameter/vignette_amount = 0.695
+shader_parameter/vignette_amount = 0.438
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/aberation_amount = 0.5
 shader_parameter/roll_line_amount = 0.0
 shader_parameter/roll_speed = 1.0
-shader_parameter/scan_line_strength = -8.0
-shader_parameter/pixel_strength = -2.0
+shader_parameter/scan_line_strength = -6.662
+shader_parameter/pixel_strength = -0.135
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1.51625, 0, 0, 0, 1, 0, 0.61745, 0)
 script = ExtResource("1_cc2ll")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523862, -0.322976)
+transform = Transform3D(1, 0, 0, 0, 0.659522, 0, 0, 0, 1, 0, 0.76951, -0.322976)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194293, 0.1856)

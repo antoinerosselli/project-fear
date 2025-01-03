@@ -19,6 +19,11 @@ config/icon="res://Sprite/icon.svg"
 
 Tools="*res://Scripts/tools.gd"
 
+[display]
+
+window/size/mode=3
+window/stretch/mode="canvas_items"
+
 [input]
 
 left={
@@ -54,9 +59,4 @@ interact={
 
 [physics]
 
-3d/default_gravity=0.0
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+3d/default_gravity=10.0
