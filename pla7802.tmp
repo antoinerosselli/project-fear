@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://nph7hef7wvt0"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_cc2ll"]
+[ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://icon.svg" id="2_d1ipv"]
+[ext_resource type="PackedScene" uid="uid://dkpi58y2ta1m1" path="res://quest/daily_quest.tscn" id="3_mal34"]
+[ext_resource type="Script" path="res://ItemList.gd" id="3_ru6jd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_cc2ll")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523862, -0.322976)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194293, 0.1856)
+target_position = Vector3(0, 0, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_17q4h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_d1ipv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="DailyQuest" parent="CanvasLayer/Control" instance=ExtResource("3_mal34")]
+layout_mode = 1
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_top = 600.0
+offset_right = 1151.0
+offset_bottom = 639.0
+max_columns = 30
+same_column_width = true
+fixed_column_width = 40
+fixed_icon_size = Vector2i(30, 30)
+script = ExtResource("3_ru6jd")
+
+[node name="show_text" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 512.0
+offset_right = 864.0
+offset_bottom = 568.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]

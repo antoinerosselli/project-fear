@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://nph7hef7wvt0"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
+[ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
+[ext_resource type="Script" path="res://Sprite/ItemList.gd" id="3_ru6jd"]
+[ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
+shader = ExtResource("4_evs1m")
+shader_parameter/resolution = Vector2(320, 180)
+shader_parameter/scan_line_amount = 1.0
+shader_parameter/warp_amount = 0.1
+shader_parameter/noise_amount = 0.03
+shader_parameter/interference_amount = 0.2
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.695
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/aberation_amount = 0.5
+shader_parameter/roll_line_amount = 0.0
+shader_parameter/roll_speed = 1.0
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
+script = ExtResource("1_cc2ll")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.523862, -0.322976)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194293, 0.1856)
+target_position = Vector3(0, 0, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_17q4h")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("2_d1ipv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_top = 600.0
+offset_right = 1151.0
+offset_bottom = 639.0
+max_columns = 30
+same_column_width = true
+fixed_column_width = 40
+fixed_icon_size = Vector2i(30, 30)
+script = ExtResource("3_ru6jd")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+material = SubResource("ShaderMaterial_h2w04")
+layout_mode = 0
+offset_right = 1160.0
+offset_bottom = 640.0
+color = Color(1, 1, 1, 0.156863)
+
+[node name="show_text" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 512.0
+offset_right = 864.0
+offset_bottom = 568.0
+label_settings = SubResource("LabelSettings_mb3ur")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]
+wait_time = 4.0
+
+[connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
