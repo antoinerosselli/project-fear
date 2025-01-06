@@ -61,7 +61,7 @@ func _physics_process(delta):
 		item_list.add_icon_item(Tools.get_icon(item.item_name),false)
 		item.interact()
 		item = null
-		can_interact = false
+		can_interact = false	
 
 func camera_joystick():
 	var input_dir = Vector2(
@@ -75,6 +75,8 @@ func camera_joystick():
 
 
 func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		print("pause")
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)

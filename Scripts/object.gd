@@ -9,6 +9,10 @@ extends StaticBody3D
 @export var is_text:bool
 @export var texts = []
 
+@export_category("is a doors ?")
+@export var door:bool
+@export var rotation_amount = 1
+
 func _ready():
 	pass 
 	
@@ -19,6 +23,8 @@ func interact():
 		player.dialogues = texts
 	if pickable == true:
 		queue_free()
+	if door == true:
+		transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
 
 func _process(delta):
 	pass

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://2vl0wqdyhik8"]
+[gd_scene load_steps=10 format=3 uid="uid://2vl0wqdyhik8"]
 
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="1_kx3wg"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="3_dxumf"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="3_rkybi"]
+[ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="4_21rkp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
 
@@ -13,10 +14,16 @@ sky_material = SubResource("ProceduralSkyMaterial_vjl52")
 background_mode = 2
 sky = SubResource("Sky_vfaw4")
 ambient_light_sky_contribution = 0.35
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.037
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6bp44"]
+
+[sub_resource type="FogMaterial" id="FogMaterial_dfetp"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406051, 0.362561, -0.0511785)
@@ -25,19 +32,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406051, 0.362561, -0.051178
 environment = SubResource("Environment_uua4v")
 camera_attributes = SubResource("CameraAttributesPractical_6bp44")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_kx3wg")]
-transform = Transform3D(0.247861, 0, -0.968795, 0, 1, 0, 0.968795, 0, 0.247861, -3.67032, -0.0895064, 6.35351)
-
-[node name="ColorRect" parent="CharacterBody3D/CanvasLayer/Control" index="1"]
-rotation = -0.00245052
-
 [node name="Area3D" parent="." instance=ExtResource("3_dxumf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
 one_shot = true
 is_text = true
-texts = ["je suis une zone de colli", "et pas de koli HAHAHAH"]
+texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
 
 [node name="Node3D" parent="." instance=ExtResource("3_rkybi")]
 
-[editable path="CharacterBody3D"]
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_dfetp")
+
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1887, -0.155392, 11.7923)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_dfetp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4352, 0, -33.1535)
+stream = ExtResource("4_21rkp")
+autoplay = true
+max_distance = 100.0
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_kx3wg")]
+transform = Transform3D(0.827428, 0, 0, 0, 1.26606, 0, 0, 0, 0.852664, -3.36637, 0.198096, 6.13779)
+
+[node name="Area3D2" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32785, -0.722322, -0.281386)
+one_shot = true
+is_text = true
+texts = ["On dirait de la brume ? "]
+
 [editable path="Area3D"]
+[editable path="Area3D2"]
