@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://2vl0wqdyhik8"]
+[gd_scene load_steps=11 format=3 uid="uid://2vl0wqdyhik8"]
 
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="1_kx3wg"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="3_dxumf"]
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="3_rkybi"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="4_21rkp"]
+[ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="5_i52nl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
 
@@ -13,7 +14,7 @@ sky_material = SubResource("ProceduralSkyMaterial_vjl52")
 [sub_resource type="Environment" id="Environment_uua4v"]
 background_mode = 2
 sky = SubResource("Sky_vfaw4")
-ambient_light_sky_contribution = 0.35
+ambient_light_sky_contribution = 0.05
 ssao_radius = 3.49
 glow_normalized = true
 glow_intensity = 7.2
@@ -33,7 +34,7 @@ environment = SubResource("Environment_uua4v")
 camera_attributes = SubResource("CameraAttributesPractical_6bp44")
 
 [node name="Area3D" parent="." instance=ExtResource("3_dxumf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
 one_shot = true
 is_text = true
 texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
@@ -60,10 +61,22 @@ max_distance = 100.0
 transform = Transform3D(0.827428, 0, 0, 0, 1.26606, 0, 0, 0, 0.852664, -3.36637, 0.198096, 6.13779)
 
 [node name="Area3D2" parent="." instance=ExtResource("3_dxumf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32785, -0.722322, -0.281386)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 6.32785, -0.722322, -0.281386)
 one_shot = true
 is_text = true
 texts = ["On dirait de la brume ? "]
 
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+stream = ExtResource("5_i52nl")
+autoplay = true
+
+[node name="Area3D3" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 12.3279, -0.722322, 1.71861)
+one_shot = true
+is_text = true
+texts = ["J'aurais peut-être plus d'information à la radio"]
+
 [editable path="Area3D"]
 [editable path="Area3D2"]
+[editable path="Area3D3"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=13 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
-[ext_resource type="Script" path="res://Sprite/ItemList.gd" id="3_ru6jd"]
+[ext_resource type="Script" path="res://Prefab/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
+[ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -25,6 +27,24 @@ shader_parameter/scan_line_strength = -6.662
 shader_parameter/pixel_strength = -0.135
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
+font = ExtResource("6_v1iah")
+font_size = 30
+font_color = Color(1, 0.584314, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi1ut"]
+bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_figmh"]
+font = ExtResource("6_v1iah")
+font_size = 30
+font_color = Color(0.869021, 0.624595, 0.144077, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
+font = ExtResource("6_v1iah")
+font_size = 30
+font_color = Color(0.870588, 0.623529, 0.145098, 1)
+outline_size = 5
+outline_color = Color(0.870588, 0.623529, 0.145098, 1)
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0, 0.61745, 0)
@@ -32,9 +52,10 @@ script = ExtResource("1_cc2ll")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.659522, 0, 0, 0, 1, 0, 0.76951, -0.322976)
+script = ExtResource("2_pajc1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.194293, 0.1856)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.2, 0, -0.194293, 0.1856)
 target_position = Vector3(0, 0, -1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -51,35 +72,65 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 640.0
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_top = 600.0
-offset_right = 1151.0
-offset_bottom = 639.0
-max_columns = 30
-same_column_width = true
-fixed_column_width = 40
-fixed_icon_size = Vector2i(30, 30)
-script = ExtResource("3_ru6jd")
-
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 material = SubResource("ShaderMaterial_h2w04")
 layout_mode = 0
+offset_left = -16.0
 offset_right = 1160.0
-offset_bottom = 640.0
+offset_bottom = 648.0
 color = Color(1, 1, 1, 0.156863)
 
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 296.0
-offset_top = 512.0
-offset_right = 864.0
-offset_bottom = 568.0
+offset_left = 128.0
+offset_top = 528.0
+offset_right = 1024.0
+offset_bottom = 616.0
 label_settings = SubResource("LabelSettings_mb3ur")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]
 wait_time = 4.0
+
+[node name="Inventory" type="Panel" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xi1ut")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 88.0
+text = "Inventory "
+label_settings = SubResource("LabelSettings_figmh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="CanvasLayer/Control/Inventory"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 88.0
+offset_right = 1120.0
+offset_bottom = 616.0
+max_columns = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 552.0
+offset_top = 312.0
+offset_right = 618.0
+offset_bottom = 343.0
+text = "USE"
+label_settings = SubResource("LabelSettings_cck1k")
+
+[node name="Mainorange" type="Sprite2D" parent="CanvasLayer/Control/Label"]
+position = Vector2(-24, 16)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("6_oj1nk")
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]

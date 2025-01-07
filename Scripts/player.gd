@@ -4,6 +4,8 @@ extends CharacterBody3D
 @onready var item_list = $CanvasLayer/Control/ItemList
 @onready var timer = $CanvasLayer/Control/show_text/Timer
 @onready var show_text = $CanvasLayer/Control/show_text
+@onready var inventory = $CanvasLayer/Control/Inventory
+@onready var logo_inter = $CanvasLayer/Control/Label
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -26,7 +28,7 @@ func dialogues_manager():
 	show_text.text = dialogues[dialogues_id]
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
-	timer.start(3 + (tmp_array.size() / 2))
+	timer.start(1 + (tmp_array.size() / 2))
 	dialogues_id += 1
 
 func _physics_process(delta):
@@ -56,9 +58,13 @@ func _physics_process(delta):
 
 	camera_joystick()
 
+	if can_interact == true:
+		logo_inter.visible = true
+	elif can_interact == false:
+		logo_inter.visible = false
+
 	move_and_slide()
 	if Input.is_action_just_pressed("interact") and can_interact == true:
-		item_list.add_icon_item(Tools.get_icon(item.item_name),false)
 		item.interact()
 		item = null
 		can_interact = false	
@@ -77,6 +83,12 @@ func camera_joystick():
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		print("pause")
+	if Input.is_action_just_pressed("select"):
+		print("inventory")
+		if inventory.visible == false :
+			inventory.visible = true
+		elif inventory.visible == true :
+			inventory.visible = false
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)

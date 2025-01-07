@@ -11,7 +11,7 @@ extends StaticBody3D
 
 @export_category("is a doors ?")
 @export var door:bool
-@export var rotation_amount = 1
+@export var rotation_amount = 1.5
 
 func _ready():
 	pass 
@@ -25,6 +25,7 @@ func interact():
 		queue_free()
 	if door == true:
 		transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
+		rotation_amount = -(rotation_amount)
 
 func _process(delta):
 	pass
