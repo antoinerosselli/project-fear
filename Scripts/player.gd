@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var show_text = $CanvasLayer/Control/show_text
 @onready var inventory = $CanvasLayer/Control/Inventory
 @onready var logo_inter = $CanvasLayer/Control/Label
+@onready var camera_3d = $Camera3D
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -19,6 +20,8 @@ var jump_speed = 5
 var mouse_sensitivity = 0.002
 var camera_sensitivity = 0.04
 var can_interact:bool = false
+
+var crouch:bool = false
 
 var item
 
@@ -51,7 +54,6 @@ func _physics_process(delta):
 			item = ray_cast_3d.get_collider()
 			if item != null:
 				if item.has_method("interact"):
-					print("nice")
 					can_interact = true
 				else :
 					can_interact
@@ -87,6 +89,16 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
+	if Input.is_action_just_pressed("crouch"):
+		print("crouch")
+		if crouch == false:
+			camera_3d.position.y -= 1.3
+			speed -= 4
+			crouch = true
+		elif crouch == true:
+			camera_3d.position.y += 1.3
+			speed += 4
+			crouch = false
 	if Input.is_action_just_pressed("select"):
 		print("inventory")
 		if inventory.visible == false :

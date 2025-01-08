@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=161 format=3 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="22_brtl6"]
 [ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://lampadaire.tscn" id="23_anrvs"]
 [ext_resource type="Texture2D" uid="uid://crq650d7notns" path="res://model_House/WC.png" id="26_boe53"]
+[ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://codesr.tscn" id="27_madox"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
 albedo_texture = ExtResource("1_ivsu5")
@@ -918,7 +919,7 @@ albedo_texture = ExtResource("16_xwbb6")
 albedo_texture = ExtResource("18_nxgg6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e47n2"]
-size = Vector3(5.66287, 3.22021, 5.9668)
+size = Vector3(5.66287, 0.315305, 5.9668)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7c15a"]
 albedo_texture = ExtResource("21_d2xxn")
@@ -1586,7 +1587,7 @@ mesh = ExtResource("19_h016w")
 [node name="StaticBody3D" type="StaticBody3D" parent="TableCorridor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TableCorridor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268287, 1.77448, -0.0393069)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.268288, 3.22693, -0.0393069)
 shape = SubResource("BoxShape3D_e47n2")
 
 [node name="StaticBody3D" parent="." instance=ExtResource("20_sptjv")]
@@ -1826,3 +1827,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_4idiv")
 transform = Transform3D(3.21874, 0, 0, 0, 2.76397, 0, 0, 0, 1, 2.8217, -1.92428, -2.26132)
 item_name = "doorchamber"
 door = true
+
+[node name="Codesr" parent="." instance=ExtResource("27_madox")]
+transform = Transform3D(0.429087, 0, 0, 0, 0.183948, 0, 0, 0, 0.507071, -5.54093, -1.41056, 0.416497)
