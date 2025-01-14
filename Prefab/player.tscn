@@ -52,11 +52,15 @@ script = ExtResource("1_cc2ll")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.659522, 0, 0, 0, 1, 0, 0.76951, -0.322976)
+current = true
 script = ExtResource("2_pajc1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.2, 0, -0.194293, 0.1856)
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 2.002, 0, -0.094293, -0.1144)
+rotation_edit_mode = 2
 target_position = Vector3(0, 0, -1)
+debug_shape_custom_color = Color(0.701961, 0.639216, 0, 1)
+debug_shape_thickness = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_17q4h")
@@ -76,8 +80,8 @@ offset_bottom = 640.0
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 material = SubResource("ShaderMaterial_h2w04")
 layout_mode = 0
-offset_left = -16.0
-offset_right = 1160.0
+offset_left = -24.0
+offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(1, 1, 1, 0.156863)
 
@@ -133,5 +137,10 @@ label_settings = SubResource("LabelSettings_cck1k")
 position = Vector2(-24, 16)
 scale = Vector2(1.45, 1.45)
 texture = ExtResource("6_oj1nk")
+
+[node name="Icon" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(576, 360)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("2_d1ipv")
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]

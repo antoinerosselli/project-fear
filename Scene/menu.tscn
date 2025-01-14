@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://saktvxup8cjo"]
+[gd_scene load_steps=5 format=3 uid="uid://saktvxup8cjo"]
 
 [ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_dyjtc"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
-[ext_resource type="Texture2D" uid="uid://dhwnr77l0kjy" path="res://Sprite/Capture d'écran 2025-01-06 152030.png" id="1_t36s4"]
 [ext_resource type="Script" path="res://Scene/Menu.gd" id="3_2v8d6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
@@ -18,18 +17,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_sb1jo")
 
-[node name="CaptureD\'écran2025-01-06152030" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.621359, 0.673597)
-texture = ExtResource("1_t36s4")
-
 [node name="title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 56.0
+offset_left = 64.0
 offset_top = 64.0
-offset_right = 368.0
+offset_right = 464.0
 offset_bottom = 152.0
-text = "Project-Fear"
+text = "Behind the light"
 label_settings = SubResource("LabelSettings_jfdc4")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -45,13 +39,23 @@ text = "play
 "
 script = ExtResource("3_2v8d6")
 
+[node name="play_button" type="Button" parent="play_button"]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 64.0
+offset_right = 248.0
+offset_bottom = 119.0
+text = "credits
+"
+script = ExtResource("3_2v8d6")
+
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 40.0
-offset_top = 320.0
+offset_top = 384.0
 offset_right = 288.0
-offset_bottom = 375.0
+offset_bottom = 439.0
 text = "quit
 "
 
@@ -61,4 +65,5 @@ scale = Vector2(0.197292, 0.171514)
 texture = ExtResource("1_dyjtc")
 
 [connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
+[connection signal="pressed" from="play_button/play_button" to="play_button/play_button" method="_on_pressed"]
 [connection signal="pressed" from="quit_button" to="play_button" method="_on_quit_button_pressed"]

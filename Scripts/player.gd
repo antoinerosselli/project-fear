@@ -56,7 +56,7 @@ func _physics_process(delta):
 				if item.has_method("interact"):
 					can_interact = true
 				else :
-					can_interact
+					can_interact = false
 		else:
 			item = null
 			can_interact = false
@@ -70,6 +70,7 @@ func _physics_process(delta):
 
 		move_and_slide()
 		if Input.is_action_just_pressed("interact") and can_interact == true:
+			print(item.item_name)
 			item.interact()
 			item = null
 			can_interact = false	
