@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ba0gk24cg7jjp"]
+
+[node name="Lamp" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+omni_range = 0.0
