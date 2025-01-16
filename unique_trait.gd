@@ -14,3 +14,9 @@ func unique(object_name):
 			player.paused = true
 			player_camera.current = false
 			door_camera.current = true
+		"blue_lamp":
+			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
+			lamp_door.light_color = Color(0, 0, 1, 1)
+		"red_lamp":
+			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
+			lamp_door.light_color = Color(1, 0, 0, 1)
