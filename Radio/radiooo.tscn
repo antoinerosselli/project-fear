@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=15 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
-[ext_resource type="PackedScene" uid="uid://cedxsoaaaw06d" path="res://Radio/knob.tscn" id="2_cyuo3"]
 [ext_resource type="Script" path="res://Radio/camera_3d.gd" id="2_oih0w"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
 [ext_resource type="AudioStream" uid="uid://c66e8ubfvjyve" path="res://Radio/float-void-144817.mp3" id="4_pkw88"]
@@ -53,8 +52,6 @@ shadow_mesh = SubResource("ArrayMesh_85lgg")
 
 [node name="Radiooo" type="Node3D"]
 script = ExtResource("1_hs2vg")
-
-[node name="Knob" parent="." instance=ExtResource("2_cyuo3")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.00121684, -0.0871472, 0.996195, -0.0139091, 0.996098, 0.0871557, -0.999903, -0.0139622, -4.726e-08, 0.659634, 1.0676, -0.661641)
