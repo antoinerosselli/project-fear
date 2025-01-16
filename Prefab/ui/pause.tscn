@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7vou8jvk3sm6"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_j12ov"]
+[ext_resource type="Script" path="res://Prefab/ui/pause.gd" id="2_0n46r"]
+
+[sub_resource type="Gradient" id="Gradient_y4js5"]
+colors = PackedColorArray(0.00184107, 0.00184107, 0.00184107, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6qvfa"]
+gradient = SubResource("Gradient_y4js5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_me8ve"]
+texture = SubResource("GradientTexture1D_6qvfa")
+
+[node name="Control" type="Control" groups=["pause"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_j12ov")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 832.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_me8ve")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 0
+offset_left = 80.0
+offset_top = 208.0
+offset_right = 256.0
+offset_bottom = 424.0
+scale = Vector2(0.995585, 1)
+alignment = 1
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+script = ExtResource("2_0n46r")
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="VBoxContainer/Continue" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Continue" method="_on_quit_pressed"]

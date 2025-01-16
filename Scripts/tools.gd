@@ -19,3 +19,13 @@ func valid_quest(quest_id):
 func get_player():
 	var player = get_tree().get_first_node_in_group("player")
 	return player
+
+func call_pause():
+	if get_tree().get_first_node_in_group("pause") == null:
+		var mp:PackedScene = preload("res://Prefab/ui/pause.tscn")
+		var mp_tmp = mp.instantiate()
+		add_child(mp_tmp)
+		print("pause !!")
+	elif get_tree().get_first_node_in_group("pause") != null :
+		var mp_tmp = get_tree().get_first_node_in_group("pause")
+		mp_tmp.queue_free()

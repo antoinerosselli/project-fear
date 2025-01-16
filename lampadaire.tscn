@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://clylj6qgxpaqe"]
+
+[ext_resource type="Texture2D" uid="uid://bt5otfi21c1tu" path="res://Extern/Abandoned_House/Abandoned_House_Metal2.jpg" id="1_ydcmy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsnlm"]
+albedo_texture = ExtResource("1_ydcmy")
+
+[sub_resource type="BoxMesh" id="BoxMesh_5ljs4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ctgc0"]
+transparency = 1
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_nljft"]
+material = SubResource("StandardMaterial3D_ctgc0")
+
+[node name="MeshInstance3D79" type="MeshInstance3D"]
+transform = Transform3D(0.237565, 0, 0, 0, 8.03263, 0, 0, 0, 0.296797, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_dsnlm")
+mesh = SubResource("BoxMesh_5ljs4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.29289, 0, 0, 0, 0.0619481, 0, 0, 0, 1.67381, -0.0674034, 0.518784, -0.00843838)
+mesh = SubResource("SphereMesh_nljft")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(4.20938, 0, 0, 0, 0.124492, 0, 0, 0, 3.36931, 0, 0.525771, 0)
+light_color = Color(0.701468, 0.557721, 0.110878, 1)
+light_energy = 2.324
+light_size = 0.44
+shadow_enabled = true
+omni_range = 11.821
