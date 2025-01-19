@@ -1,11 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=17 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
-[ext_resource type="Script" path="res://Prefab/Camera3D.gd" id="2_pajc1"]
+[ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
+[ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="6_q3xuo"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
+[ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
+[ext_resource type="Texture2D" uid="uid://ygnrkpw1blau" path="res://Sprite/expjunior.png" id="7_y5srj"]
+[ext_resource type="Texture2D" uid="uid://dhwnr77l0kjy" path="res://Sprite/Capture d'écran 2025-01-06 152030.png" id="9_amtpu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -56,7 +60,7 @@ current = true
 script = ExtResource("2_pajc1")
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 2.002, 0, -0.094293, -0.1144)
+transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 2.002, 0, -0.0246154, -0.1144)
 rotation_edit_mode = 2
 target_position = Vector3(0, 0, -1)
 debug_shape_custom_color = Color(0.701961, 0.639216, 0, 1)
@@ -80,9 +84,9 @@ offset_bottom = 640.0
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
 material = SubResource("ShaderMaterial_h2w04")
 layout_mode = 0
-offset_left = -24.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -3.0
+offset_right = 1161.0
+offset_bottom = 654.0
 color = Color(1, 1, 1, 0.156863)
 
 [node name="show_text" type="Label" parent="CanvasLayer/Control"]
@@ -117,11 +121,21 @@ vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="CanvasLayer/Control/Inventory"]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 88.0
-offset_right = 1120.0
-offset_bottom = 616.0
-max_columns = 5
+offset_left = 89.0
+offset_top = 86.0
+offset_right = 1089.0
+offset_bottom = 614.0
+item_count = 5
+max_columns = 6
+same_column_width = true
+icon_mode = 0
+icon_scale = 4.0
+fixed_icon_size = Vector2i(60, 60)
+item_0/icon = ExtResource("6_q3xuo")
+item_1/icon = ExtResource("2_d1ipv")
+item_2/icon = ExtResource("7_y5srj")
+item_3/icon = ExtResource("6_oj1nk")
+item_4/icon = ExtResource("9_amtpu")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 visible = false
@@ -139,8 +153,8 @@ scale = Vector2(1.45, 1.45)
 texture = ExtResource("6_oj1nk")
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(576, 360)
-scale = Vector2(0.1875, 0.1875)
-texture = ExtResource("2_d1ipv")
+position = Vector2(594, 342)
+scale = Vector2(0.596875, 0.531875)
+texture = ExtResource("7_252vv")
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]

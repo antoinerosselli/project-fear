@@ -5,5 +5,9 @@ func _physics_process(delta):
 		var player = Tools.get_player()
 		var camera_player = player.get_node("Camera3D")
 		current = false
+		var player_icon = player.get_node("CanvasLayer/Control/Icon")
+		var player_use = player.get_node("CanvasLayer/Control/Label")
+		player_icon.visible = true
+		player_use.visible = true
 		camera_player.current = true
 		player.paused = false

@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
 @onready var ray_cast_3d = $Camera3D/RayCast3D
-@onready var item_list = $CanvasLayer/Control/ItemList
 @onready var timer = $CanvasLayer/Control/show_text/Timer
 @onready var show_text = $CanvasLayer/Control/show_text
 @onready var inventory = $CanvasLayer/Control/Inventory
@@ -11,6 +10,8 @@ extends CharacterBody3D
 var dialogues_id:int = 0
 var dialogues:Array = []
 var read_dialogue = false
+
+var sanity = 100
 
 var paused:bool = false
 
@@ -29,7 +30,6 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func dialogues_manager():
-	print(dialogues[dialogues_id])
 	show_text.text = dialogues[dialogues_id]
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
@@ -70,7 +70,6 @@ func _physics_process(delta):
 
 		move_and_slide()
 		if Input.is_action_just_pressed("interact") and can_interact == true:
-			print(item.item_name)
 			item.interact()
 			item = null
 			can_interact = false	
@@ -91,7 +90,6 @@ func _input(event):
 		Tools.call_pause()
 		paused = !paused
 	if Input.is_action_just_pressed("crouch"):
-		print("crouch")
 		if crouch == false:
 			camera_3d.position.y -= 1.3
 			speed -= 4
@@ -101,7 +99,6 @@ func _input(event):
 			speed += 4
 			crouch = false
 	if Input.is_action_just_pressed("select"):
-		print("inventory")
 		if inventory.visible == false :
 			inventory.visible = true
 		elif inventory.visible == true :

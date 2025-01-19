@@ -35,12 +35,13 @@ func interact():
 		rotation_amount = -(rotation_amount)
 	if is_an_interruptor == true:
 		is_on = !is_on
-		if is_on == true:
-			var ligth = lamp.get_node("OmniLight3D")
-			ligth.omni_range = 5.0
-		elif  is_on == false:
-			var ligth = lamp.get_node("OmniLight3D")
-			ligth.omni_range = 0.0
+		if UniqueTrait.elec == true :
+			if is_on == true:
+				var ligth = lamp.get_node("OmniLight3D")
+				ligth.omni_range = 5.0
+			elif  is_on == false:
+				var ligth = lamp.get_node("OmniLight3D")
+				ligth.omni_range = 0.0
 	if script_trait == true:
 		UniqueTrait.unique(item_name)
 

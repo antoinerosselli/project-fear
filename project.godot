@@ -18,7 +18,7 @@ config/icon="res://Sprite/icon.svg"
 [autoload]
 
 Tools="*res://Scripts/tools.gd"
-UniqueTrait="*res://unique_trait.gd"
+UniqueTrait="*res://Scripts/unique_trait.gd"
 Radio="*res://Radio/radio.gd"
 
 [display]

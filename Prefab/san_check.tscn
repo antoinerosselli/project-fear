@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://kqj8fx624wri"]
+
+[ext_resource type="Script" path="res://Scripts/object.gd" id="1_ngx6a"]
+[ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_rsw27"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_besk8"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_frd6t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_yhxcp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uwly"]
+size = Vector3(1, 1.96735, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kcu43"]
+
+[node name="SanCheck" type="StaticBody3D"]
+script = ExtResource("1_ngx6a")
+item_name = "sancheck"
+script_trait = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_besk8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.298726, 0, 0, 0, 0.0478765, -0.326805, 0, 1.0403, 0.0150402, 0, 1.17118, 0)
+mesh = SubResource("TorusMesh_frd6t")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.343966, 0, 0, 0, 0.385262, 0, 0, 0, 0.394749, 0, 0.618387, 0)
+mesh = SubResource("CapsuleMesh_yhxcp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483673, 0)
+shape = SubResource("BoxShape3D_8uwly")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.361895, 0, 0, 0, 0.294949, 0.177231, 0, -0.126751, 0.412418, 0, 0.379694, 0.398009)
+mesh = SubResource("BoxMesh_kcu43")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.288793, 0, 0, 0, 0.267995, 0.282183, 0, -0.1197, 0.631774, 0, 0.473932, 0.607008)
+texture = ExtResource("2_rsw27")

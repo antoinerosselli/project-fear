@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_dyjtc"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
-[ext_resource type="Script" path="res://Scene/Menu.gd" id="3_2v8d6"]
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="3_2v8d6"]
+
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
 font_size = 35

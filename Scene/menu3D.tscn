@@ -1,6 +1,6 @@
 [gd_scene load_steps=175 format=3 uid="uid://dlrpb51jtykx3"]
 
-[ext_resource type="Script" path="res://Scene/MenuCamera3D.gd" id="1_8obb3"]
+[ext_resource type="Script" path="res://Scripts/MenuCamera3D.gd" id="1_8obb3"]
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_22hrd"]
 [ext_resource type="PackedScene" uid="uid://saktvxup8cjo" path="res://Scene/menu.tscn" id="1_jvk5s"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_t8a7a"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c23c0ms8d7bu0" path="res://Extern/Abandoned_House/Textures/Banqueta.jpg" id="8_u1myr"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="9_y83x7"]
 [ext_resource type="Texture2D" uid="uid://bfm4m3lobfuf3" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 1.png" id="10_d8pl2"]
-[ext_resource type="Script" path="res://Prefab/pervaneler.gd" id="11_vmeg7"]
+[ext_resource type="Script" path="res://Scripts/pervaneler.gd" id="11_vmeg7"]
 [ext_resource type="Texture2D" uid="uid://dpjbvuns1grxr" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 2.png" id="12_af7gf"]
 [ext_resource type="Texture2D" uid="uid://sojcem2px26v" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 4.png" id="13_0io25"]
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="14_s7gu3"]
@@ -25,15 +25,16 @@
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="21_mxky7"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="22_1iicw"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="23_kt6b4"]
-[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://lampadaire.tscn" id="24_b3kva"]
+[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="24_b3kva"]
 [ext_resource type="Texture2D" uid="uid://crq650d7notns" path="res://model_House/WC.png" id="25_o624s"]
-[ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://codesr.tscn" id="26_pxy44"]
+[ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://Prefab/codesr.tscn" id="26_pxy44"]
 [ext_resource type="Texture2D" uid="uid://do80rgpfe2cvl" path="res://Extern/Architecture Textures/WP2.png" id="27_566w4"]
 [ext_resource type="AudioStream" uid="uid://4pce5n81tj1d" path="res://Music&Sound/sliding-door-261122.mp3" id="28_nod0t"]
 [ext_resource type="Texture2D" uid="uid://x368mp0f4tee" path="res://Extern/Architecture Textures/Floor 1.png" id="29_2fxsc"]
 [ext_resource type="PackedScene" uid="uid://1qetcicfegqf" path="res://Prefab/interrupteur.tscn" id="30_o0o56"]
 [ext_resource type="PackedScene" uid="uid://ba0gk24cg7jjp" path="res://Prefab/lamp.tscn" id="31_fo7st"]
-[ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://frontdoor.tscn" id="32_yrps8"]
+[ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://Prefab/frontdoor.tscn" id="32_yrps8"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
 
