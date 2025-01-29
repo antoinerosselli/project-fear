@@ -14,7 +14,7 @@ func _ready():
 	audioStream.play()
 
 func _process(data):
-	print(Radio.getValue())
+	#print(Radio.getValue())
 	var knobCurrentVal :float= Radio.getValue()
 	
 	if (knobCurrentVal > 85 && knobCurrentVal < 90 && Audio1.playing != true):

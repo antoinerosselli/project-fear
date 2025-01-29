@@ -1970,7 +1970,10 @@ item_name = "blue_lamp"
 item_name = "red_lamp"
 
 [node name="Radiooo" parent="." instance=ExtResource("34_gca3k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2622, -1.07494, -4.11563)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.6078, -0.870256, -4.64879)
+
+[node name="Radio" parent="Radiooo" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0.0410678, 0)
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]
