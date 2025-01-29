@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cedxsoaaaw06d"]
+
+[ext_resource type="Script" path="res://Radio/knob.gd" id="1_0qg2r"]
+[ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="2_ds7cn"]
+[ext_resource type="Texture2D" uid="uid://ygnrkpw1blau" path="res://Sprite/expjunior.png" id="3_ik2pp"]
+[ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="4_5i24a"]
+
+[node name="Knob" type="Node2D"]
+script = ExtResource("1_0qg2r")
+
+[node name="SpriteBack" type="Sprite2D" parent="."]
+position = Vector2(174.25, 296.875)
+scale = Vector2(0.367248, 0.318677)
+texture = ExtResource("2_ds7cn")
+
+[node name="Knob" type="Marker2D" parent="."]
+position = Vector2(174.25, 296.875)
+scale = Vector2(0.367248, 0.318677)
+
+[node name="KnobBack" type="Sprite2D" parent="Knob"]
+position = Vector2(-0.680705, -143.955)
+scale = Vector2(0.081672, 0.775988)
+texture = ExtResource("3_ik2pp")
+
+[node name="KnobAngle" type="Marker2D" parent="Knob"]
+position = Vector2(-0.680697, -288.302)
+
+[node name="Middle" type="Marker2D" parent="."]
+position = Vector2(174, 198)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource("4_5i24a")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

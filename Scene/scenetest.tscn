@@ -1,95 +1,99 @@
-[gd_scene load_steps=12 format=3 uid="uid://2vl0wqdyhik8"]
+[gd_scene load_steps=11 format=3 uid="uid://2vl0wqdyhik8"]
 
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="1_kx3wg"]
-[ext_resource type="PackedScene" uid="uid://ydc1yywm4io7" path="res://Prefab/object.tscn" id="2_m4c1i"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="3_dxumf"]
-[ext_resource type="Texture2D" uid="uid://tp32fhxmua4u" path="res://Extern/Abandoned_House/Textures/t (28).jpg" id="4_a04kt"]
-[ext_resource type="Texture2D" uid="uid://bji3vbgpibhw1" path="res://Extern/Abandoned_House/Abandoned_House_Cuar1.jpg" id="5_7bw75"]
+[ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="3_rkybi"]
+[ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="4_21rkp"]
+[ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="5_i52nl"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yd83"]
-albedo_texture = ExtResource("4_a04kt")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_hi8ft"]
-material = SubResource("StandardMaterial3D_1yd83")
-size = Vector3(8, 4, 1)
+[sub_resource type="Sky" id="Sky_vfaw4"]
+sky_material = SubResource("ProceduralSkyMaterial_vjl52")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uls34"]
-size = Vector3(7.94135, 3.96436, 1)
+[sub_resource type="Environment" id="Environment_uua4v"]
+background_mode = 2
+sky = SubResource("Sky_vfaw4")
+ambient_light_sky_contribution = 0.05
+ssao_radius = 3.49
+glow_normalized = true
+glow_intensity = 7.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.037
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hlyes"]
-albedo_texture = ExtResource("5_7bw75")
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_6bp44"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_qspml"]
-material = SubResource("StandardMaterial3D_hlyes")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xmbpl"]
+[sub_resource type="FogMaterial" id="FogMaterial_dfetp"]
+emission = Color(0.281187, 0.281187, 0.281187, 1)
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406051, 0.362561, -0.0511785)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_kx3wg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.89569, -0.0895064, 0.328491)
-
-[node name="StaticBody3D" parent="." instance=ExtResource("2_m4c1i")]
-item_name = "test"
-pickable = true
-is_text = true
-texts = ["UN BO LOGO DI DONK"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uua4v")
+camera_attributes = SubResource("CameraAttributesPractical_6bp44")
 
 [node name="Area3D" parent="." instance=ExtResource("3_dxumf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1, -0.955145, -0.722322, 3.3345)
 one_shot = true
 is_text = true
-texts = ["je suis une zone de colli", "et pas de koli HAHAHAH"]
+texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46943, -4.76837e-07, 7.106)
-light_color = Color(1, 1, 0.376471, 1)
+[node name="Node3D" parent="." instance=ExtResource("3_rkybi")]
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
+size = Vector3(24.1484, 6.75517, 2)
+material = SubResource("FogMaterial_dfetp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.45395)
-mesh = SubResource("BoxMesh_hi8ft")
-skeleton = NodePath("../..")
+[node name="FogVolume2" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1887, -0.155392, 11.7923)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_dfetp")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4352, 0, -33.1535)
+stream = ExtResource("4_21rkp")
+volume_db = -4.0
+autoplay = true
+max_distance = 100.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
-shape = SubResource("BoxShape3D_uls34")
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_kx3wg")]
+transform = Transform3D(0.827428, 0, 0, 0, 1.26606, 0, 0, 0, 0.852664, -3.36637, 0.198096, 6.13779)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(-0.0730119, 0, 0.997331, 0, 1, 0, -0.997331, 0, -0.0730119, 3.8187, 0, 5.35274)
-mesh = SubResource("BoxMesh_hi8ft")
-skeleton = NodePath("../..")
+[node name="Camera3D" parent="CharacterBody3D" index="0"]
+transform = Transform3D(1.20856, 0, 0, 0, 0.789852, 0, 0, 0, 1.17279, 0, 0.76951, -0.322976)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D2"]
+[node name="Area3D2" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1, 6.32785, -0.722322, -0.281386)
+one_shot = true
+is_text = true
+texts = ["On dirait de la brume ? "]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
-shape = SubResource("BoxShape3D_uls34")
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -36)
+stream = ExtResource("5_i52nl")
+autoplay = true
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(-0.0730119, 0, 0.997331, 0, 1, 0, -0.997331, 0, -0.0730119, -4.3985, 0, 6.17594)
-mesh = SubResource("BoxMesh_hi8ft")
-skeleton = NodePath("../..")
+[node name="Area3D3" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 12.3279, -0.722322, 1.71861)
+one_shot = true
+is_text = true
+texts = ["J'aurais peut-être plus d'information à la radio"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D3"]
+[node name="Area3D4" parent="." instance=ExtResource("3_dxumf")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, -3.6721, -0.722322, -4.28139)
+one_shot = true
+is_text = true
+texts = ["C'est quoi cet endroit ?"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
-shape = SubResource("BoxShape3D_uls34")
+[node name="FogVolume3" type="FogVolume" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21.1887, -0.155392, -2.2077)
+size = Vector3(13.9297, 7.08786, 2)
+material = SubResource("FogMaterial_dfetp")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
-transform = Transform3D(4.5767, 0, 0, 0, 1.30994, 0, 0, 0, 4.3352, -0.112934, -1.88979, 5.54339)
-mesh = SubResource("PlaneMesh_qspml")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D/MeshInstance3D4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/MeshInstance3D4/StaticBody3D"]
-shape = SubResource("BoxShape3D_xmbpl")
-
-[editable path="CharacterBody3D"]
-[editable path="StaticBody3D"]
 [editable path="Area3D"]
+[editable path="CharacterBody3D"]
+[editable path="Area3D2"]
+[editable path="Area3D3"]
+[editable path="Area3D4"]
