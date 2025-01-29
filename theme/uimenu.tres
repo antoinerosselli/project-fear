@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://csapexuuln7nx"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://csapexuuln7nx"]
+
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_s4nag"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ssuff"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -6,8 +8,18 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi60y"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_veyya"]
+bg_color = Color(0.220917, 0.218369, 0.223463, 0.862745)
+
 [resource]
 Button/colors/font_color = Color(0.880947, 0.480186, 0.14517, 1)
 Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_s4nag")
 Button/styles/normal = SubResource("StyleBoxFlat_ssuff")
 Button/styles/pressed = SubResource("StyleBoxFlat_xi60y")
+Label/fonts/font = ExtResource("1_s4nag")
+RichTextLabel/colors/table_border = Color(0.351563, 0.351563, 0.351563, 1)
+RichTextLabel/styles/background = SubResource("StyleBoxFlat_veyya")
+RichTextLabel/styles/fill = SubResource("StyleBoxFlat_veyya")
+RichTextLabel/styles/focus = SubResource("StyleBoxFlat_veyya")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_veyya")

@@ -15,4 +15,3 @@ func get_following():
 	var end = project_position(mouse, 1000)
 	var query = PhysicsRayQueryParameters3D.create(start, end)
 	var result = worldspace.intersect_ray(query)
-	print(result)

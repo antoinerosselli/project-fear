@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=20 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
 [ext_resource type="Texture2D" uid="uid://ygnrkpw1blau" path="res://Sprite/expjunior.png" id="7_y5srj"]
 [ext_resource type="Texture2D" uid="uid://dhwnr77l0kjy" path="res://Sprite/Capture d'écran 2025-01-06 152030.png" id="9_amtpu"]
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
+[ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
@@ -42,6 +44,9 @@ bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
 font = ExtResource("6_v1iah")
 font_size = 30
 font_color = Color(0.869021, 0.624595, 0.144077, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oeckh"]
+font_color = Color(0.854902, 0.611765, 0.141176, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
 font = ExtResource("6_v1iah")
@@ -114,7 +119,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xi1ut")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 88.0
-text = "Inventory "
+text = "Inventory"
 label_settings = SubResource("LabelSettings_figmh")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -137,6 +142,32 @@ item_2/icon = ExtResource("7_y5srj")
 item_3/icon = ExtResource("6_oj1nk")
 item_4/icon = ExtResource("9_amtpu")
 
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Inventory"]
+visible = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 88.0
+offset_right = 1095.0
+offset_bottom = 614.0
+theme = ExtResource("10_3h1t1")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Panel"]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 3.0
+offset_right = 1005.0
+offset_bottom = 522.0
+theme = ExtResource("10_3h1t1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory/Panel"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 27.0
+offset_right = 265.0
+offset_bottom = 50.0
+text = "Frequency"
+label_settings = SubResource("LabelSettings_oeckh")
+
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 visible = false
 layout_mode = 0
@@ -156,5 +187,11 @@ texture = ExtResource("6_oj1nk")
 position = Vector2(594, 342)
 scale = Vector2(0.596875, 0.531875)
 texture = ExtResource("7_252vv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.979202, 0, 0, 0, 1, 0, 0.731353, -1.12726)
+stream = ExtResource("12_utawn")
+unit_size = 0.1
+autoplay = true
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]

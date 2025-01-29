@@ -4,7 +4,6 @@
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="3_2v8d6"]
 
-
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
 font_size = 35
 font_color = Color(0.831373, 0.45098, 0.141176, 1)
