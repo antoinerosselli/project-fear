@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://saktvxup8cjo"]
+[gd_scene load_steps=7 format=3 uid="uid://saktvxup8cjo"]
 
 [ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_dyjtc"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
@@ -7,6 +7,13 @@
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
 font_size = 35
 font_color = Color(0.831373, 0.45098, 0.141176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1rv5"]
+bg_color = Color(0.0195939, 0.0588438, 0.0306887, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4fajt"]
+font_size = 20
+font_color = Color(0.815686, 0.447059, 0.145098, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -63,6 +70,42 @@ text = "quit
 position = Vector2(1080, 576)
 scale = Vector2(0.197292, 0.171514)
 texture = ExtResource("1_dyjtc")
+
+[node name="credits" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 256.0
+offset_right = 896.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j1rv5")
+
+[node name="Label" type="Label" parent="credits"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 64.0
+offset_right = 497.0
+offset_bottom = 85.0
+text = "- Experienced Junior -"
+label_settings = SubResource("LabelSettings_4fajt")
+
+[node name="Label2" type="Label" parent="credits"]
+offset_left = 184.0
+offset_top = 128.0
+offset_right = 504.0
+offset_bottom = 389.0
+text = "Antoine Rosselli
+
+Pierrick Mahe
+
+Guillaume Delboulbes
+
+Liam Mottet 
+
+Tom Lori 
+
+Marius Barthelemy"
+label_settings = SubResource("LabelSettings_4fajt")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
 [connection signal="pressed" from="play_button/play_button" to="play_button/play_button" method="_on_pressed"]

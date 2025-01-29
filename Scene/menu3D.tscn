@@ -288,13 +288,6 @@ script = ExtResource("1_8obb3")
 
 [node name="Menu" parent="Camera3D" instance=ExtResource("1_jvk5s")]
 
-[node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(-0.972664, -0.0240103, 0.230972, 0.0151305, 0.985974, 0.166213, -0.231723, 0.165164, -0.958658, -4.00681, 0.125682, 0.0993918)
-fov = 71.3179
-script = ExtResource("1_8obb3")
-
-[node name="Menu" parent="Camera3D2" instance=ExtResource("1_jvk5s")]
-
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.406051, 0.362561, -0.0511785)
 
