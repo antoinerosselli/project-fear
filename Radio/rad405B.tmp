@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cmscfg5nt2lh2" path="res://Radio/ode-to-joy-piano-68697.mp3" id="5_md1ok"]
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="6_1c028"]
 [ext_resource type="AudioStream" uid="uid://b5t2wl86kf27k" path="res://Radio/red-and-blue-145386.mp3" id="6_2rr4k"]
-[ext_resource type="Script" path="res://Radio/node_of_knob.gd" id="7_y5w6w"]
+[ext_resource type="Script" path="res://Radio/knob_3d.gd" id="8_7ba4o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_isctp"]
 albedo_texture = ExtResource("4_vwjea")
@@ -74,17 +74,23 @@ material_override = SubResource("StandardMaterial3D_isctp")
 mesh = SubResource("ArrayMesh_r2yfk")
 skeleton = NodePath("")
 
-[node name="NodeOfKnob" type="Node3D" parent="Radio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.135, 0.063)
-script = ExtResource("7_y5w6w")
-
-[node name="Knob3D" type="CSGCylinder3D" parent="Radio/NodeOfKnob"]
-transform = Transform3D(-5.24537e-09, 0.0276934, -9.37033e-22, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, -9.13913e-17, 0.103, 2.13981e-05, -0.000261009, -0.000213005)
+[node name="Knob3D" type="CSGCylinder3D" parent="Radio"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -9.37033e-22, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, -9.13913e-17, 0.103, 0.0900214, 0.134739, 0.062787)
 material_override = SubResource("StandardMaterial3D_whav6")
+script = ExtResource("8_7ba4o")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Radio/NodeOfKnob/Knob3D"]
+[node name="Middle" type="Marker3D" parent="Radio/Knob3D"]
+transform = Transform3D(1, 8.88178e-16, 0, 1.42109e-14, 1, 0, 0, 0, 1, 0, 1.01847, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Radio/NodeOfKnob/Knob3D/StaticBody3D"]
+[node name="KnobAngle" type="Marker3D" parent="Radio/Knob3D/Middle"]
+transform = Transform3D(1, 0, 0, 2.84217e-14, 1, 0, 0, 0, 1, -0.494428, 0, 0)
+
+[node name="Reference" type="Marker3D" parent="Radio/Knob3D"]
+transform = Transform3D(1, 1.77636e-15, 0, 4.26326e-14, 1, 0, 0, 0, 1, -0.578671, -0.592429, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Radio/Knob3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Radio/Knob3D/StaticBody3D"]
 shape = SubResource("CylinderShape3D_ipl5k")
 
 [node name="RadioCamera" type="Camera3D" parent="Radio"]
