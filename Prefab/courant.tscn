@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://do4vqec45hk5"]
+
+[ext_resource type="Script" path="res://Scripts/object.gd" id="1_pu7aw"]
+[ext_resource type="PackedScene" uid="uid://di2g1g6g2kpk8" path="res://stat_shower.tscn" id="2_4vjn1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qsrww"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfr5x"]
+
+[node name="Courant" type="StaticBody3D"]
+script = ExtResource("1_pu7aw")
+item_name = "courant"
+script_trait = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_qsrww")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bfr5x")
+
+[node name="StatShower" parent="." instance=ExtResource("2_4vjn1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.516535)

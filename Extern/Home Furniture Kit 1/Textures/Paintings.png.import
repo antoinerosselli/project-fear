@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckuhbqawys8qq"
-path.s3tc="res://.godot/imported/Paintings.png-808e5909e5bcc5d44ecf50bd8108823e.s3tc.ctex"
+path.s3tc="res://.godot/imported/Paintings.png-3376408673f199ae470bf8f442ff96fe.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/Home Furniture Kit 1/textures/Paintings.png"
-dest_files=["res://.godot/imported/Paintings.png-808e5909e5bcc5d44ecf50bd8108823e.s3tc.ctex"]
+source_file="res://Extern/Home Furniture Kit 1/Textures/Paintings.png"
+dest_files=["res://.godot/imported/Paintings.png-3376408673f199ae470bf8f442ff96fe.s3tc.ctex"]
 
 [params]
 

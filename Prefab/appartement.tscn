@@ -1,4 +1,4 @@
-[gd_scene load_steps=171 format=4 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=177 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c23c0ms8d7bu0" path="res://Extern/Abandoned_House/Textures/Banqueta.jpg" id="7_2hp47"]
 [ext_resource type="Texture2D" uid="uid://qhcbyuucl1ft" path="res://Extern/Home Furniture Kit 1/Textures/Wooden Table and Chair.png" id="8_dglfk"]
 [ext_resource type="Texture2D" uid="uid://bfm4m3lobfuf3" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 1.png" id="9_15imn"]
-[ext_resource type="Script" path="res://Prefab/pervaneler.gd" id="10_c4kbk"]
+[ext_resource type="Script" path="res://Scripts/pervaneler.gd" id="10_c4kbk"]
 [ext_resource type="Texture2D" uid="uid://dpjbvuns1grxr" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 2.png" id="10_oywuj"]
 [ext_resource type="Texture2D" uid="uid://sojcem2px26v" path="res://Extern/Home Furniture Kit 1/Textures/Home Atlas 4.png" id="12_03387"]
 [ext_resource type="Texture2D" uid="uid://cbks0hwngu87l" path="res://Extern/Home Furniture Kit 1/Textures/Kitchen Aspirator.png" id="13_20qrr"]
@@ -19,21 +19,27 @@
 [ext_resource type="Texture2D" uid="uid://dxis8exg7hx4w" path="res://Extern/Home kit 2/Textures/Desk Lamp 1/Desk Lamp 1_256.png" id="16_xwbb6"]
 [ext_resource type="ArrayMesh" uid="uid://bhogxa7a3s1vu" path="res://model_House/lamp.res" id="17_hqtfn"]
 [ext_resource type="Texture2D" uid="uid://chncdhii6c5mg" path="res://Extern/Home kit 2/Textures/Table/Table_256.png" id="18_nxgg6"]
+[ext_resource type="Script" path="res://Scripts/lamp_uniq.gd" id="19_5m5wx"]
 [ext_resource type="ArrayMesh" uid="uid://jfh3j2und5og" path="res://model_House/table_corridor.res" id="19_h016w"]
 [ext_resource type="PackedScene" uid="uid://jq2qjyp07h12" path="res://Prefab/door.tscn" id="20_sptjv"]
 [ext_resource type="Texture2D" uid="uid://c6seq6ytbogb0" path="res://Extern/Abandoned_House/Abandoned_House_Madera2.jpg" id="21_d2xxn"]
 [ext_resource type="Texture2D" uid="uid://ce1nvtln1gy8u" path="res://Extern/Abandoned_House/Abandoned_House_Pasto1.jpg" id="22_brtl6"]
-[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://lampadaire.tscn" id="23_anrvs"]
+[ext_resource type="PackedScene" uid="uid://clylj6qgxpaqe" path="res://Prefab/lampadaire.tscn" id="23_anrvs"]
 [ext_resource type="Texture2D" uid="uid://crq650d7notns" path="res://model_House/WC.png" id="26_boe53"]
-[ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://codesr.tscn" id="27_madox"]
+[ext_resource type="PackedScene" uid="uid://d1wd0y8agtr47" path="res://Prefab/codesr.tscn" id="27_madox"]
 [ext_resource type="Texture2D" uid="uid://do80rgpfe2cvl" path="res://Extern/Architecture Textures/WP2.png" id="28_shjf1"]
 [ext_resource type="Texture2D" uid="uid://x368mp0f4tee" path="res://Extern/Architecture Textures/Floor 1.png" id="29_0v232"]
 [ext_resource type="AudioStream" uid="uid://4pce5n81tj1d" path="res://Music&Sound/sliding-door-261122.mp3" id="29_88mqh"]
 [ext_resource type="PackedScene" uid="uid://1qetcicfegqf" path="res://Prefab/interrupteur.tscn" id="31_22q3o"]
 [ext_resource type="PackedScene" uid="uid://ba0gk24cg7jjp" path="res://Prefab/lamp.tscn" id="32_5p1tq"]
-[ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://frontdoor.tscn" id="32_g21hh"]
-[ext_resource type="PackedScene" uid="uid://dao3wel0w0dk" path="res://console_secure_room.tscn" id="33_7ud62"]
+[ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://Prefab/frontdoor.tscn" id="32_g21hh"]
+[ext_resource type="Script" path="res://Scripts/spot_light_3d.gd" id="33_3fu2f"]
+[ext_resource type="PackedScene" uid="uid://dao3wel0w0dk" path="res://Prefab/console_secure_room.tscn" id="33_7ud62"]
 [ext_resource type="PackedScene" uid="uid://chacbj2q6jcmg" path="res://Radio/radiooo.tscn" id="34_gca3k"]
+[ext_resource type="Script" path="res://Scripts/lamp.gd" id="34_mgl20"]
+[ext_resource type="PackedScene" uid="uid://kqj8fx624wri" path="res://Prefab/san_check.tscn" id="35_2b1nk"]
+[ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="37_uj65h"]
+[ext_resource type="PackedScene" uid="uid://bqbogskuhgkc8" path="res://Prefab/spawner.tscn" id="40_q17al"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
 albedo_texture = ExtResource("1_ivsu5")
@@ -1587,6 +1593,7 @@ shape = SubResource("BoxShape3D_uls34")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.11575, -1.0286, 0.903891)
 material_override = SubResource("StandardMaterial3D_p1uu7")
 mesh = ExtResource("17_hqtfn")
+script = ExtResource("19_5m5wx")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -0.0582294, 3.01847, -0.000372171)
@@ -1937,6 +1944,7 @@ transform = Transform3D(0.0641361, 0.668131, -0.741274, -0.0575925, 0.744043, 0.
 light_color = Color(0.778983, 0, 0.209023, 1)
 light_energy = 9.0
 spot_range = 11.681
+script = ExtResource("33_3fu2f")
 
 [node name="Interrupteur2" parent="." node_paths=PackedStringArray("lamp") instance=ExtResource("31_22q3o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82241, 0.16344, -5.55802)
@@ -1946,6 +1954,7 @@ lamp = NodePath("../Lamp2")
 
 [node name="Lamp2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3561, 1.70016, -3.27553)
+script = ExtResource("34_mgl20")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamp2"]
 light_size = 0.47
@@ -1974,6 +1983,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.607
 
 [node name="Radio" parent="Radiooo" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0.0410678, 0)
+
+[node name="SanCheck" parent="." instance=ExtResource("35_2b1nk")]
+transform = Transform3D(-0.999824, 0, 0.0187786, 0, 1, 0, -0.0187786, 0, -0.999824, -9.62966, -1.48069, -0.117205)
+
+[node name="Courant" parent="." instance=ExtResource("37_uj65h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2385, 0.379485, -7.74736)
+
+[node name="Spawner" parent="." instance=ExtResource("40_q17al")]
+transform = Transform3D(3.30899, 0, 0, 0, 3.16137, 0, 0, 0, 3.77344, -12.5548, -1.43467, -0.376554)
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]

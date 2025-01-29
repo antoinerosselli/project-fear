@@ -1,16 +1,25 @@
 extends CharacterBody3D
 
 @onready var ray_cast_3d = $Camera3D/RayCast3D
-@onready var item_list = $CanvasLayer/Control/ItemList
 @onready var timer = $CanvasLayer/Control/show_text/Timer
 @onready var show_text = $CanvasLayer/Control/show_text
 @onready var inventory = $CanvasLayer/Control/Inventory
 @onready var logo_inter = $CanvasLayer/Control/Label
 @onready var camera_3d = $Camera3D
+@onready var icon = $CanvasLayer/Control/Icon
+
+#inventory
+var on_inventory:bool = false
+@onready var label = $CanvasLayer/Control/Inventory/Label
+@onready var inventory_inside = $CanvasLayer/Control/Inventory/ItemList
+@onready var journal = $CanvasLayer/Control/Inventory/Panel
+@onready var journal_inside = $CanvasLayer/Control/Inventory/Panel/RichTextLabel
 
 var dialogues_id:int = 0
 var dialogues:Array = []
 var read_dialogue = false
+
+var sanity = 100
 
 var paused:bool = false
 
@@ -29,8 +38,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func dialogues_manager():
-	print(dialogues[dialogues_id])
 	show_text.text = dialogues[dialogues_id]
+	journal_inside.text += show_text.text + "\n"
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
 	timer.start(1 + (tmp_array.size() / 2))
@@ -70,10 +79,9 @@ func _physics_process(delta):
 
 		move_and_slide()
 		if Input.is_action_just_pressed("interact") and can_interact == true:
-			print(item.item_name)
 			item.interact()
 			item = null
-			can_interact = false	
+			can_interact = false
 
 func camera_joystick():
 	var input_dir = Vector2(
@@ -90,8 +98,17 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
+	if on_inventory == true:
+		if Input.is_action_just_pressed("changeleft") or Input.is_action_just_pressed("changeright"):
+			if label.text == "Journal":
+				label.text = "Inventory"
+				journal.visible = false
+				inventory_inside.visible = true
+			elif label.text == "Inventory":
+				label.text = "Journal"
+				inventory_inside.visible = false
+				journal.visible = true
 	if Input.is_action_just_pressed("crouch"):
-		print("crouch")
 		if crouch == false:
 			camera_3d.position.y -= 1.3
 			speed -= 4
@@ -101,11 +118,13 @@ func _input(event):
 			speed += 4
 			crouch = false
 	if Input.is_action_just_pressed("select"):
-		print("inventory")
+		on_inventory = !on_inventory
 		if inventory.visible == false :
 			inventory.visible = true
+			icon.visible = false
 		elif inventory.visible == true :
 			inventory.visible = false
+			icon.visible = true
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		$Camera3D.rotate_x(-event.relative.y * mouse_sensitivity)

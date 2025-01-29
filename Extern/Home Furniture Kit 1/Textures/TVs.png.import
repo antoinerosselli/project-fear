@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4p7nqd7t3n8n"
-path.s3tc="res://.godot/imported/TVs.png-e86896391235c06ba4631a7867b88557.s3tc.ctex"
+path.s3tc="res://.godot/imported/TVs.png-93edfa2a3c09d17b874dccaad547005d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/Home Furniture Kit 1/textures/TVs.png"
-dest_files=["res://.godot/imported/TVs.png-e86896391235c06ba4631a7867b88557.s3tc.ctex"]
+source_file="res://Extern/Home Furniture Kit 1/Textures/TVs.png"
+dest_files=["res://.godot/imported/TVs.png-93edfa2a3c09d17b874dccaad547005d.s3tc.ctex"]
 
 [params]
 

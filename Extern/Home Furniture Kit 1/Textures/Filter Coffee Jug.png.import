@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv46i8i6nmgkx"
-path.s3tc="res://.godot/imported/Filter Coffee Jug.png-c5b860558bea640cc769e4e5f1c86569.s3tc.ctex"
+path.s3tc="res://.godot/imported/Filter Coffee Jug.png-d67a9a2b9f56fbe306f9536df0aaaaf3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/Home Furniture Kit 1/textures/Filter Coffee Jug.png"
-dest_files=["res://.godot/imported/Filter Coffee Jug.png-c5b860558bea640cc769e4e5f1c86569.s3tc.ctex"]
+source_file="res://Extern/Home Furniture Kit 1/Textures/Filter Coffee Jug.png"
+dest_files=["res://.godot/imported/Filter Coffee Jug.png-d67a9a2b9f56fbe306f9536df0aaaaf3.s3tc.ctex"]
 
 [params]
 
