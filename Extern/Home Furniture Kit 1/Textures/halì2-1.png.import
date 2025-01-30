@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ipumsy4bviwd"
-path.s3tc="res://.godot/imported/halì2-1.png-ddd12967dafb02a078546093ec430f7c.s3tc.ctex"
+path.s3tc="res://.godot/imported/halì2-1.png-fe9c42b50802481cc1da1a7a09400abb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/Home Furniture Kit 1/textures/halì2-1.png"
-dest_files=["res://.godot/imported/halì2-1.png-ddd12967dafb02a078546093ec430f7c.s3tc.ctex"]
+source_file="res://Extern/Home Furniture Kit 1/Textures/halì2-1.png"
+dest_files=["res://.godot/imported/halì2-1.png-fe9c42b50802481cc1da1a7a09400abb.s3tc.ctex"]
 
 [params]
 
