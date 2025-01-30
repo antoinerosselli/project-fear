@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=16 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="6_1c028"]
 [ext_resource type="AudioStream" uid="uid://b5t2wl86kf27k" path="res://Radio/red-and-blue-145386.mp3" id="6_2rr4k"]
 [ext_resource type="Script" path="res://Radio/node_of_knob.gd" id="7_y5w6w"]
+[ext_resource type="Script" path="res://Radio/label_3d.gd" id="9_8pyjm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whav6"]
 albedo_texture = ExtResource("6_1c028")
@@ -71,16 +72,16 @@ stream = ExtResource("5_md1ok")
 [node name="Audio3" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
 stream = ExtResource("6_2rr4k")
 
-[node name="Knob3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(-5.24537e-09, 0.0276934, 0, -0.12, -1.21052e-09, 0, 0, 0, 0.103, 0.0651534, -0.0300681, 0.0294662)
+[node name="Radio#NodeOfKnob" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065, -0.03, 0.029)
+script = ExtResource("7_y5w6w")
+
+[node name="Knob3D" type="CSGCylinder3D" parent="Radio#NodeOfKnob"]
+transform = Transform3D(-5.24537e-09, 0.0276934, -2.18111e-23, 0.0672663, 6.7856e-10, -0.0852963, -0.0993743, -1.00245e-09, -0.0577369, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_whav6")
 
-[node name="Middle" type="Marker3D" parent="Knob3D"]
+[node name="Middle" type="Marker3D" parent="Radio#NodeOfKnob/Knob3D"]
 transform = Transform3D(1, 8.88178e-16, 0, 1.42109e-14, 1, 0, 0, 0, 1, 0, 1.01847, 0)
-
-[node name="Radio#NodeOfKnob" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.135, 0.063)
-script = ExtResource("7_y5w6w")
 
 [node name="Radio_NodeOfKnob#Knob3D2" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-5.24537e-09, 0.0276934, -9.37033e-22, -0.12, -1.21052e-09, -7.77629e-09, -9.05975e-09, -9.13913e-17, 0.103, 2.13981e-05, -0.000261009, -0.000213005)
@@ -102,5 +103,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Radio/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088552, 0.122329, -0.00602877)
 shape = SubResource("BoxShape3D_56vaq")
+
+[node name="Label3D" type="Label3D" parent="Radio"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.08, 0.18603, -0.11252)
+pixel_size = 0.001
+double_sided = false
+text = "FM 0.0"
+font_size = 34
+outline_size = 10
+script = ExtResource("9_8pyjm")
 
 [connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
