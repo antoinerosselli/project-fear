@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=14 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
-[ext_resource type="Script" path="res://Radio/camera_3d.gd" id="2_oih0w"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
 [ext_resource type="AudioStream" uid="uid://c66e8ubfvjyve" path="res://Radio/float-void-144817.mp3" id="4_pkw88"]
 [ext_resource type="Texture2D" uid="uid://bhqewc124qxmp" path="res://Extern/Abandoned_House/Abandoned_House_Tele1.jpg" id="4_vwjea"]
@@ -55,6 +54,11 @@ size = Vector3(0.149475, 0.264557, 0.445435)
 [node name="Radiooo" type="Node3D"]
 script = ExtResource("1_hs2vg")
 
+[node name="Camera3D" type="Camera3D" parent="." groups=["radio"]]
+transform = Transform3D(0.00121684, -0.0871472, 0.996195, -0.0139091, 0.996098, 0.0871557, -0.999903, -0.0139622, -4.726e-08, 0.592689, 0.0756419, 0.00180715)
+top_level = true
+
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_gpaep")
 autoplay = true
@@ -68,11 +72,13 @@ stream = ExtResource("5_md1ok")
 [node name="Audio3" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
 stream = ExtResource("6_2rr4k")
 
-[node name="Radio" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_isctp")
-mesh = SubResource("ArrayMesh_r2yfk")
-skeleton = NodePath("")
+[node name="Knob3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-5.24537e-09, 0.0276934, 0, -0.12, -1.21052e-09, 0, 0, 0, 0.103, 0.0651534, -0.0300681, 0.0294662)
+material_override = SubResource("StandardMaterial3D_whav6")
+
+[node name="Middle" type="Marker3D" parent="Knob3D"]
+transform = Transform3D(1, 8.88178e-16, 0, 1.42109e-14, 1, 0, 0, 0, 1, 0, 1.01847, 0)
+
 
 [node name="NodeOfKnob" type="Node3D" parent="Radio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.135, 0.063)
@@ -87,11 +93,12 @@ material_override = SubResource("StandardMaterial3D_whav6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Radio/NodeOfKnob/Knob3D/StaticBody3D"]
 shape = SubResource("CylinderShape3D_ipl5k")
 
-[node name="RadioCamera" type="Camera3D" parent="Radio"]
-auto_translate_mode = 1
-transform = Transform3D(-4.37114e-08, 0, 1, 7.54979e-08, 1, 3.30012e-15, -1, 7.54979e-08, -4.37114e-08, 0.75, 0.212, 0)
-fov = 38.3792
-script = ExtResource("2_oih0w")
+[node name="Radio" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, -0.024868, -0.164807, -0.0333208)
+material_override = SubResource("StandardMaterial3D_isctp")
+mesh = SubResource("ArrayMesh_r2yfk")
+skeleton = NodePath("")
+
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Radio"]
 

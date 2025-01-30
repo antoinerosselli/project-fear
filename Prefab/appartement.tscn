@@ -35,10 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://mwp0ue5tqaet" path="res://Prefab/frontdoor.tscn" id="32_g21hh"]
 [ext_resource type="Script" path="res://Scripts/spot_light_3d.gd" id="33_3fu2f"]
 [ext_resource type="PackedScene" uid="uid://dao3wel0w0dk" path="res://Prefab/console_secure_room.tscn" id="33_7ud62"]
-[ext_resource type="PackedScene" uid="uid://chacbj2q6jcmg" path="res://Radio/radiooo.tscn" id="34_gca3k"]
 [ext_resource type="Script" path="res://Scripts/lamp.gd" id="34_mgl20"]
 [ext_resource type="PackedScene" uid="uid://kqj8fx624wri" path="res://Prefab/san_check.tscn" id="35_2b1nk"]
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="37_uj65h"]
+[ext_resource type="PackedScene" uid="uid://jgo413cihxir" path="res://radio_obj.tscn" id="40_ijhvj"]
 [ext_resource type="PackedScene" uid="uid://bqbogskuhgkc8" path="res://Prefab/spawner.tscn" id="40_q17al"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
@@ -1978,12 +1978,6 @@ item_name = "blue_lamp"
 [node name="Interrupteur2" parent="StaticBody3D3" index="3"]
 item_name = "red_lamp"
 
-[node name="Radiooo" parent="." instance=ExtResource("34_gca3k")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.6078, -0.870256, -4.64879)
-
-[node name="Radio" parent="Radiooo" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0, 0.0410678, 0)
-
 [node name="SanCheck" parent="." instance=ExtResource("35_2b1nk")]
 transform = Transform3D(-0.999824, 0, 0.0187786, 0, 1, 0, -0.0187786, 0, -0.999824, -9.62966, -1.48069, -0.117205)
 
@@ -1993,8 +1987,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2385, 0.379485, -7.74736)
 [node name="Spawner" parent="." instance=ExtResource("40_q17al")]
 transform = Transform3D(3.30899, 0, 0, 0, 3.16137, 0, 0, 0, 3.77344, -12.5548, -1.43467, -0.376554)
 
+[node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.77569)
+
+[node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
+transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.1035, -0.441262, -3.74333)
+fov = 69.6711
+
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]
 [editable path="StaticBody3D3/Interrupteur"]
 [editable path="StaticBody3D3/Interrupteur2"]
-[editable path="Radiooo"]
+[editable path="RadioObj"]
+[editable path="RadioObj/Radiooo"]

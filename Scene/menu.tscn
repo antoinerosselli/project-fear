@@ -89,6 +89,7 @@ text = "- Experienced Junior -"
 label_settings = SubResource("LabelSettings_4fajt")
 
 [node name="Label2" type="Label" parent="credits"]
+layout_mode = 0
 offset_left = 184.0
 offset_top = 128.0
 offset_right = 504.0

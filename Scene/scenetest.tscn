@@ -14,6 +14,7 @@ sky_material = SubResource("ProceduralSkyMaterial_vjl52")
 [sub_resource type="Environment" id="Environment_uua4v"]
 background_mode = 2
 sky = SubResource("Sky_vfaw4")
+ambient_light_color = Color(0.244776, 0.244776, 0.244776, 1)
 ambient_light_sky_contribution = 0.05
 ssao_radius = 3.49
 glow_normalized = true
@@ -40,6 +41,15 @@ is_text = true
 texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
 
 [node name="Node3D" parent="." instance=ExtResource("3_rkybi")]
+
+[node name="WC" parent="Node3D" index="94"]
+surface_material_override/0 = null
+
+[node name="RadioObj" parent="Node3D" index="115"]
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.662804, -4.77569)
+
+[node name="Camera3D" parent="Node3D/RadioObj/Radiooo" index="0"]
+transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.4845, -0.139476, -3.94333)
 
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
@@ -93,6 +103,13 @@ size = Vector3(13.9297, 7.08786, 2)
 material = SubResource("FogMaterial_dfetp")
 
 [editable path="Area3D"]
+[editable path="Node3D"]
+[editable path="Node3D/Lamp1"]
+[editable path="Node3D/StaticBody3D3"]
+[editable path="Node3D/StaticBody3D3/Interrupteur"]
+[editable path="Node3D/StaticBody3D3/Interrupteur2"]
+[editable path="Node3D/RadioObj"]
+[editable path="Node3D/RadioObj/Radiooo"]
 [editable path="CharacterBody3D"]
 [editable path="Area3D2"]
 [editable path="Area3D3"]

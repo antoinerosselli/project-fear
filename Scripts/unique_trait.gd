@@ -34,3 +34,16 @@ func unique(object_name):
 					player.dialogues = ["Plus rien ne va..."]
 		"courant":
 			elec = !elec
+		"radio":
+			var radioObj = get_tree().get_first_node_in_group("radio")
+			var radio_camera = radioObj
+			var player = Tools.get_player()
+			var player_camera = player.get_node("Camera3D")
+			var player_icon = player.get_node("CanvasLayer/Control/Icon")
+			var player_use = player.get_node("CanvasLayer/Control/Label")
+			player_icon.visible = false
+			player_use.visible = false
+			player.use_radio = true
+			player.paused = true
+			player_camera.current = false
+			radio_camera.current = true

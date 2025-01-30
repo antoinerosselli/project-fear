@@ -20,6 +20,7 @@ var dialogues:Array = []
 var read_dialogue = false
 
 var sanity = 100
+var use_radio:bool= false
 
 var paused:bool = false
 
