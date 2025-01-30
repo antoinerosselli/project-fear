@@ -3,7 +3,6 @@
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_j12ov"]
 [ext_resource type="Script" path="res://Scripts/pause.gd" id="2_0n46r"]
 
-
 [sub_resource type="Gradient" id="Gradient_y4js5"]
 colors = PackedColorArray(0.00184107, 0.00184107, 0.00184107, 1, 0, 0, 0, 0)
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=14 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
-[ext_resource type="Script" path="res://Radio/camera_3d.gd" id="2_oih0w"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
 [ext_resource type="AudioStream" uid="uid://c66e8ubfvjyve" path="res://Radio/float-void-144817.mp3" id="4_pkw88"]
 [ext_resource type="Texture2D" uid="uid://bhqewc124qxmp" path="res://Extern/Abandoned_House/Abandoned_House_Tele1.jpg" id="4_vwjea"]
@@ -53,10 +52,9 @@ shadow_mesh = SubResource("ArrayMesh_85lgg")
 [node name="Radiooo" type="Node3D"]
 script = ExtResource("1_hs2vg")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.00121684, -0.0871472, 0.996195, -0.0139091, 0.996098, 0.0871557, -0.999903, -0.0139622, -4.726e-08, 0.659634, 1.0676, -0.661641)
+[node name="Camera3D" type="Camera3D" parent="." groups=["radio"]]
+transform = Transform3D(0.00121684, -0.0871472, 0.996195, -0.0139091, 0.996098, 0.0871557, -0.999903, -0.0139622, -4.726e-08, 0.592689, 0.0756419, 0.00180715)
 top_level = true
-script = ExtResource("2_oih0w")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_gpaep")
@@ -72,7 +70,7 @@ stream = ExtResource("5_md1ok")
 stream = ExtResource("6_2rr4k")
 
 [node name="Knob3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(-5.24537e-09, 0.0276934, 0, -0.12, -1.21052e-09, 0, 0, 0, 0.103, 0.132098, 0.96189, -0.633982)
+transform = Transform3D(-5.24537e-09, 0.0276934, 0, -0.12, -1.21052e-09, 0, 0, 0, 0.103, 0.0651534, -0.0300681, 0.0294662)
 material_override = SubResource("StandardMaterial3D_whav6")
 
 [node name="Middle" type="Marker3D" parent="Knob3D"]
@@ -90,7 +88,7 @@ transform = Transform3D(1, 1.77636e-15, 0, 4.26326e-14, 1, 0, 0, 0, 1, -0.578671
 shape = SubResource("CylinderShape3D_ipl5k")
 
 [node name="Radio" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, 0.0420766, 0.827151, -0.696769)
+transform = Transform3D(1, 0, 0, 0, 1, 7.54979e-08, 0, -7.54979e-08, 1, -0.024868, -0.164807, -0.0333208)
 material_override = SubResource("StandardMaterial3D_isctp")
 mesh = SubResource("ArrayMesh_r2yfk")
 skeleton = NodePath("")

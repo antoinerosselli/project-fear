@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jq2qjyp07h12"]
+[gd_scene load_steps=8 format=4 uid="uid://jq2qjyp07h12"]
 
 [ext_resource type="Script" path="res://Scripts/object.gd" id="1_p2x70"]
 [ext_resource type="Texture2D" uid="uid://4x1ytliea5c5" path="res://model_House/Door.png" id="2_7grle"]
@@ -19,12 +19,12 @@ _surfaces = [{
 "aabb": AABB(-0.00936, 0, -0.01096, 0.00937, 0.00034, 0.02111),
 "format": 34896613377,
 "index_count": 36,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 3, 0, 0, 0, 4, 0, 6, 0, 5, 0, 7, 0, 5, 0, 6, 0, 0, 0, 4, 0, 5, 0, 2, 0, 0, 0, 5, 0, 3, 0, 6, 0, 4, 0, 0, 0, 3, 0, 4, 0, 1, 0, 7, 0, 6, 0, 3, 0, 1, 0, 6, 0, 2, 0, 5, 0, 7, 0, 1, 0, 2, 0, 7, 0),
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAFAAYAAAAEAAUAAgAAAAUAAwAGAAQAAAADAAQAAQAHAAYAAwABAAYAAgAFAAcAAQACAAcA"),
 "name": "Door",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
-"vertex_data": PackedByteArray(185, 255, 0, 0, 223, 255, 0, 0, 0, 0, 255, 255, 223, 255, 0, 0, 0, 0, 0, 0, 223, 255, 0, 0, 185, 255, 255, 255, 223, 255, 0, 0, 185, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 185, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0)
+"vertex_data": PackedByteArray("uf8AAN//AAAAAP//3/8AAAAAAADf/wAAuf///9//AAC5/wAAAAAAAAAAAAAAAAAAuf///wAAAAAAAP//AAAAAA==")
 }]
 blend_shape_mode = 0
 
@@ -32,16 +32,16 @@ blend_shape_mode = 0
 resource_name = "Root Scene_Door"
 _surfaces = [{
 "aabb": AABB(-0.00936, 0, -0.01096, 0.00937, 0.00034, 0.02111),
-"attribute_data": PackedByteArray(92, 247, 142, 187, 124, 251, 254, 73, 92, 247, 254, 73, 124, 251, 142, 187, 92, 247, 142, 187, 92, 247, 254, 73, 124, 251, 142, 187, 124, 251, 254, 73, 60, 251, 0, 0, 173, 137, 255, 255, 60, 251, 255, 255, 173, 137, 0, 0, 255, 255, 0, 0, 222, 251, 255, 255, 255, 255, 255, 255, 222, 251, 0, 0, 173, 137, 0, 0, 60, 251, 255, 255, 173, 137, 255, 255, 60, 251, 0, 0, 222, 251, 0, 0, 255, 255, 255, 255, 222, 251, 255, 255, 255, 255, 0, 0),
+"attribute_data": PackedByteArray("XPeOu3z7/klc9/5JfPuOu1z3jrtc9/5JfPuOu3z7/kk8+wAArYn//zz7//+tiQAA//8AAN77////////3vsAAK2JAAA8+///rYn//zz7AADe+wAA/////977/////wAA"),
 "format": 34896613399,
 "index_count": 36,
-"index_data": PackedByteArray(0, 0, 2, 0, 1, 0, 1, 0, 3, 0, 0, 0, 4, 0, 6, 0, 5, 0, 7, 0, 5, 0, 6, 0, 8, 0, 10, 0, 9, 0, 11, 0, 8, 0, 9, 0, 12, 0, 14, 0, 13, 0, 15, 0, 12, 0, 13, 0, 16, 0, 18, 0, 17, 0, 19, 0, 16, 0, 17, 0, 20, 0, 22, 0, 21, 0, 23, 0, 20, 0, 21, 0),
+"index_data": PackedByteArray("AAACAAEAAQADAAAABAAGAAUABwAFAAYACAAKAAkACwAIAAkADAAOAA0ADwAMAA0AEAASABEAEwAQABEAFAAWABUAFwAUABUA"),
 "material": SubResource("StandardMaterial3D_qrqvq"),
 "name": "Door",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray(185, 255, 0, 0, 223, 255, 255, 191, 0, 0, 255, 255, 223, 255, 255, 191, 0, 0, 0, 0, 223, 255, 255, 191, 185, 255, 255, 255, 223, 255, 255, 191, 185, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 185, 255, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 185, 255, 0, 0, 223, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 185, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 223, 255, 255, 191, 185, 255, 255, 255, 223, 255, 84, 213, 185, 255, 0, 0, 0, 0, 84, 213, 185, 255, 255, 255, 0, 0, 84, 213, 185, 255, 0, 0, 223, 255, 84, 213, 0, 0, 255, 255, 223, 255, 255, 63, 185, 255, 255, 255, 0, 0, 255, 63, 0, 0, 255, 255, 0, 0, 255, 63, 185, 255, 255, 255, 223, 255, 255, 63, 0, 0, 0, 0, 223, 255, 170, 42, 0, 0, 255, 255, 0, 0, 170, 42, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 255, 255, 223, 255, 170, 42, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 191, 255, 191, 255, 191, 255, 191, 255, 191, 255, 191, 255, 191, 255, 191, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 0, 0, 255, 127, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 170, 42, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 84, 213, 84, 213, 84, 213, 84, 213, 84, 213, 84, 213, 84, 213, 84, 213)
+"vertex_data": PackedByteArray("uf8AAN///78AAP//3///vwAAAADf//+/uf///9///7+5/wAAAAAAAAAAAAAAAAAAuf///wAAAAAAAP//AAAAALn/AADf//+/AAAAAAAA/7+5/wAAAAD/vwAAAADf//+/uf///9//VNW5/wAAAABU1bn///8AAFTVuf8AAN//VNUAAP//3///P7n///8AAP8/AAD//wAA/z+5////3///PwAAAADf/6oqAAD//wAAqioAAAAAAACqKgAA///f/6oq//////////////////////+//7//v/+//7//v/+//78AAP9/AAD/fwAA/38AAP9/qiqqKqoqqiqqKqoqqiqqKv///3////9/////f////39U1VTVVNVU1VTVVNVU1VTV")
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_114lr")

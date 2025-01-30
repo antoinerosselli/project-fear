@@ -5,15 +5,14 @@ extends Node3D
 @onready var Audio2 = $AudioStreamPlayer3D/Audio2
 @onready var Audio3 = $AudioStreamPlayer3D/Audio3
 
-#const AudioStatic = preload("res://Radio/edm-static-240838.mp3")
-#const Audio1 = preload("res://Radio/float-void-144817.mp3")
-#const Audio2 = preload("res://Radio/ode-to-joy-piano-68697.mp3")
-#const Audio3 = preload("res://Radio/red-and-blue-145386.mp3")
-
 func _ready():
 	audioStream.play()
 
 func _process(data):
+	var player = Tools.get_player()
+	if player.use_radio == true:
+		radio_usage()
+		
 	var knobCurrentVal :float= Radio.getValue()
 	
 	if (knobCurrentVal > 85 && knobCurrentVal < 90 && Audio1.playing != true):
@@ -43,3 +42,27 @@ func _process(data):
 
 func _on_audio_stream_player_3d_finished() -> void:
 	audioStream.play()
+	
+func radio_usage():
+	if Radio.getValue() < 0: Radio.setValue(0)
+	if Radio.getValue() > 100: Radio.setValue(100)
+	
+	if Input.is_action_just_pressed("close"):
+		var player = Tools.get_player()
+		var radioObj = get_tree().get_first_node_in_group("radio")
+		var radio_camera = radioObj
+		var player_camera = player.get_node("Camera3D")
+		var player_icon = player.get_node("CanvasLayer/Control/Icon")
+		var player_use = player.get_node("CanvasLayer/Control/Label")
+		player_icon.visible = true
+		player_use.visible = true
+		player.use_radio = false
+		player.paused = false
+		player_camera.current = true
+		radio_camera.current = false
+
+	if Input.is_action_pressed("changeleft"):
+		Radio.setValue(Radio.getValue() - 0.2)
+	elif Input.is_action_pressed("changeright"):
+		Radio.setValue(Radio.getValue() + 0.2)
+	print(Radio.getValue())
