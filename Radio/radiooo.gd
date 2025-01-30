@@ -65,4 +65,4 @@ func radio_usage():
 		Radio.setValue(Radio.getValue() - 0.2)
 	elif Input.is_action_pressed("changeright"):
 		Radio.setValue(Radio.getValue() + 0.2)
-	print(Radio.getValue())
+	print("frequence : " + Radio.getValue())
