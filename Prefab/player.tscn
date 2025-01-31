@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=21 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
@@ -36,6 +36,11 @@ shader_parameter/pixel_strength = -0.135
 font = ExtResource("6_v1iah")
 font_size = 30
 font_color = Color(1, 0.584314, 0.12549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3nvd"]
+font = ExtResource("6_v1iah")
+font_size = 30
+font_color = Color(0.0352941, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi1ut"]
 bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
@@ -107,6 +112,18 @@ autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]
 wait_time = 4.0
+
+[node name="show_text_radio" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_top = 22.0
+offset_right = 1152.0
+offset_bottom = 108.0
+label_settings = SubResource("LabelSettings_i3nvd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text_radio"]
+wait_time = 3.0
 
 [node name="Inventory" type="Panel" parent="CanvasLayer/Control"]
 visible = false

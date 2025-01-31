@@ -59,7 +59,7 @@ script = ExtResource("1_hs2vg")
 transform = Transform3D(0.00121684, -0.0871472, 0.996195, -0.0139091, 0.996098, 0.0871557, -0.999903, -0.0139622, -4.726e-08, 0.592689, 0.0756419, 0.00180715)
 top_level = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["radio_sound"]]
 stream = ExtResource("3_gpaep")
 autoplay = true
 

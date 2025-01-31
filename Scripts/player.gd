@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
 @onready var timer = $CanvasLayer/Control/show_text/Timer
 @onready var show_text = $CanvasLayer/Control/show_text
+@onready var show_text_radio = $CanvasLayer/Control/show_text_radio
 @onready var inventory = $CanvasLayer/Control/Inventory
 @onready var logo_inter = $CanvasLayer/Control/Label
 @onready var camera_3d = $Camera3D
