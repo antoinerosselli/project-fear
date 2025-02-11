@@ -46,10 +46,11 @@ func set_radio_sound(channel,sound):
 	audio_channel.set_stream(sound)
 	audio_channel.play()
 
-func radio_text(simple_text, time):
+func radio_text(simple_text, time, color):
 	var player = Tools.get_player()
 	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
 	text_radio.text = simple_text
+	text_radio.modulate = color
 	var timer = Timer.new()
 	timer.wait_time = time
 	timer.one_shot = true

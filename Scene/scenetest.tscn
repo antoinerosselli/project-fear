@@ -10,12 +10,12 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vjl52"]
 
-[sub_resource type="Sky" id="Sky_vfaw4"]
+[sub_resource type="Sky" id="Sky_pa1gw"]
 sky_material = SubResource("ProceduralSkyMaterial_vjl52")
 
 [sub_resource type="Environment" id="Environment_uua4v"]
 background_mode = 2
-sky = SubResource("Sky_vfaw4")
+sky = SubResource("Sky_pa1gw")
 ambient_light_color = Color(0.244776, 0.244776, 0.244776, 1)
 ambient_light_sky_contribution = 0.05
 ssao_radius = 3.49
@@ -47,13 +47,13 @@ texts = ["C'est quoi ce bruit", "On dirait que ça vient de dehors"]
 [node name="WC" parent="Node3D" index="94"]
 surface_material_override/0 = null
 
-[node name="RadioObj" parent="Node3D" index="115"]
+[node name="RadioObj" parent="Node3D" index="116"]
 transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.662804, -4.77569)
 
 [node name="Camera3D" parent="Node3D/RadioObj/Radiooo" index="0"]
 transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.4845, -0.139476, -3.94333)
 
-[node name="BathroomSink" parent="Node3D" index="116"]
+[node name="BathroomSink" parent="Node3D" index="117"]
 surface_material_override/0 = null
 
 [node name="FogVolume" type="FogVolume" parent="."]

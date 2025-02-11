@@ -117,10 +117,11 @@ wait_time = 4.0
 layout_mode = 0
 offset_top = 22.0
 offset_right = 1152.0
-offset_bottom = 108.0
+offset_bottom = 145.0
 label_settings = SubResource("LabelSettings_i3nvd")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text_radio"]
 wait_time = 3.0

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhwnr77l0kjy"
-path.s3tc="res://.godot/imported/Capture d\'écran 2025-01-06 152030.png-b9183b7b9def9dea74e7bd3f9a34c811.s3tc.ctex"
+uid="uid://dl8f88ew2cnf8"
+path.s3tc="res://.godot/imported/belleradio.png-c4eda2ed5ac6ceaa89e64092693a661d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Sprite/Capture d'écran 2025-01-06 152030.png"
-dest_files=["res://.godot/imported/Capture d\\'écran 2025-01-06 152030.png-b9183b7b9def9dea74e7bd3f9a34c811.s3tc.ctex"]
+source_file="res://Extern/FONT/belleradio.png"
+dest_files=["res://.godot/imported/belleradio.png-c4eda2ed5ac6ceaa89e64092693a661d.s3tc.ctex"]
 
 [params]
 
