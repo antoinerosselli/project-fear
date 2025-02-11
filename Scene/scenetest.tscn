@@ -53,6 +53,9 @@ transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.06056
 [node name="Camera3D" parent="Node3D/RadioObj/Radiooo" index="0"]
 transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.4845, -0.139476, -3.94333)
 
+[node name="BathroomSink" parent="Node3D" index="116"]
+surface_material_override/0 = null
+
 [node name="FogVolume" type="FogVolume" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06772, -0.0350263, -10.1913)
 size = Vector3(24.1484, 6.75517, 2)

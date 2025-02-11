@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwc5ou7m5viey"
-path.s3tc="res://.godot/imported/BathroomSink.png-f01bd202424588ab441a3035cb701679.s3tc.ctex"
+uid="uid://c8msgxqwds82l"
+path.s3tc="res://.godot/imported/JOINTHEMINE.png-01da6b82e5723df665aadbfe4b5cdabf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Extern/textures/BathroomSink.png"
-dest_files=["res://.godot/imported/BathroomSink.png-f01bd202424588ab441a3035cb701679.s3tc.ctex"]
+source_file="res://Extern/FONT/JOINTHEMINE.png"
+dest_files=["res://.godot/imported/JOINTHEMINE.png-01da6b82e5723df665aadbfe4b5cdabf.s3tc.ctex"]
 
 [params]
 
