@@ -46,12 +46,13 @@ text = "play
 "
 script = ExtResource("3_2v8d6")
 
-[node name="play_button" type="Button" parent="play_button"]
+[node name="play_button2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_top = 64.0
-offset_right = 248.0
-offset_bottom = 119.0
+offset_left = 40.0
+offset_top = 320.0
+offset_right = 288.0
+offset_bottom = 375.0
 text = "credits
 "
 script = ExtResource("3_2v8d6")
@@ -109,5 +110,5 @@ label_settings = SubResource("LabelSettings_4fajt")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
-[connection signal="pressed" from="play_button/play_button" to="play_button/play_button" method="_on_pressed"]
+[connection signal="pressed" from="play_button2" to="play_button2" method="_on_pressed"]
 [connection signal="pressed" from="quit_button" to="play_button" method="_on_quit_button_pressed"]

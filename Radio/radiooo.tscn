@@ -61,6 +61,7 @@ top_level = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["radio_sound"]]
 stream = ExtResource("3_gpaep")
+unit_size = 1.0
 autoplay = true
 
 [node name="Audio1" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]

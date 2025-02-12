@@ -1,11 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://co4aabqugmh0u"]
+[gd_scene load_steps=13 format=3 uid="uid://co4aabqugmh0u"]
 
 [ext_resource type="PackedScene" uid="uid://cgp8iojh0a330" path="res://Prefab/appartement.tscn" id="1_jb5ec"]
 [ext_resource type="PackedScene" uid="uid://nph7hef7wvt0" path="res://Prefab/player.tscn" id="2_36dop"]
 [ext_resource type="AudioStream" uid="uid://lyvhsv0mdkix" path="res://Music&Sound/military-alarm-129017.mp3" id="3_8js8r"]
 [ext_resource type="AudioStream" uid="uid://deb1cmth3t1nu" path="res://Music&Sound/explosion-47821.mp3" id="4_5r21v"]
-[ext_resource type="PackedScene" uid="uid://wfmu7ny1m538" path="res://Days/Day1/rm_day_1.tscn" id="6_o1j03"]
+[ext_resource type="PackedScene" uid="uid://wfmu7ny1m538" path="res://Scene/Days/Day1/rm_day_1.tscn" id="6_o1j03"]
 [ext_resource type="PackedScene" uid="uid://b6g2terg4cba1" path="res://Prefab/zone_collision.tscn" id="7_frxae"]
+[ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is71n"]
 
@@ -49,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1887, -0.155392, 11.7923)
 size = Vector3(13.9297, 7.08786, 2)
 material = SubResource("FogMaterial_87u83")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["alarm"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.4352, 0, -33.1535)
 stream = ExtResource("3_8js8r")
 volume_db = -4.0
@@ -91,6 +92,8 @@ is_text = true
 texts = ["What is this place?"]
 
 [node name="rm_day1" parent="." instance=ExtResource("6_o1j03")]
+
+[node name="em_day_1" parent="." instance=ExtResource("7_vxswh")]
 
 [editable path="one"]
 [editable path="two"]

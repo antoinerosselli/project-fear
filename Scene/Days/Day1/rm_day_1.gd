@@ -4,7 +4,7 @@ var time_elapsed = 0
 var gouv_rad = 0
 var gouv_color = Color(0.117647, 0.564706, 1, 1)
 var belle_rad = 0
-var belle_color = Color(0.729412, 0.333333, 0.827451, 1)
+var belle_color = Color(0.580392, 0, 0.827451, 1)
 
 func _on_timer_timeout():
 	time_elapsed += 1  # Incrémente le temps écoulé chaque seconde
@@ -13,7 +13,7 @@ func _on_timer_timeout():
 func check_radio_conditions():
 	var radio_value = Radio.getValue()
 	#gouv radio ==>
-	if time_elapsed >= 60 and time_elapsed <= 120:
+	if time_elapsed >= 30 and time_elapsed <= 70:
 		if radio_value > 54 and radio_value < 64 and gouv_rad == 0:
 			Tools.set_radio_sound(1, preload("res://voice/allonsmangerdesspag.mp3"))
 			Tools.radio_text("Poisonous gases have invaded the streets, stay at home", 5,gouv_color)
@@ -22,7 +22,7 @@ func check_radio_conditions():
 			Tools.set_radio_sound(1, preload("res://voice/allonsmangerdesspag.mp3"))
 			Tools.radio_text("To communicate with us, access the secure room using the button at the end of the corridor.", 5,gouv_color)
 			gouv_rad += 1
-	if time_elapsed >= 120 and time_elapsed <= 240:  
+	if time_elapsed >= 100 and time_elapsed <= 240:  
 		if radio_value > 54 and radio_value < 64 and gouv_rad == 2:
 			Tools.set_radio_sound(1, preload("res://voice/allonsmangerdesspag.mp3"))
 			Tools.radio_text("To signal your presence, activate the blue button and see if it works through your door.", 5,gouv_color)
