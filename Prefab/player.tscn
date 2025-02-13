@@ -1,15 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=19 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
-[ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="6_q3xuo"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
-[ext_resource type="Texture2D" uid="uid://ygnrkpw1blau" path="res://Sprite/expjunior.png" id="7_y5srj"]
-[ext_resource type="Texture2D" uid="uid://dhwnr77l0kjy" path="res://Sprite/Capture d'écran 2025-01-06 152030.png" id="9_amtpu"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
 
@@ -40,7 +37,6 @@ font_color = Color(1, 0.584314, 0.12549, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_i3nvd"]
 font = ExtResource("6_v1iah")
 font_size = 30
-font_color = Color(0.0352941, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi1ut"]
 bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
@@ -59,6 +55,10 @@ font_size = 30
 font_color = Color(0.870588, 0.623529, 0.145098, 1)
 outline_size = 5
 outline_color = Color(0.870588, 0.623529, 0.145098, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fy4og"]
+font = ExtResource("6_v1iah")
+font_size = 25
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0, 0.61745, 0)
@@ -127,7 +127,6 @@ autowrap_mode = 2
 wait_time = 3.0
 
 [node name="Inventory" type="Panel" parent="CanvasLayer/Control"]
-visible = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -137,31 +136,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xi1ut")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 88.0
-text = "Inventory"
+text = "- Journal -"
 label_settings = SubResource("LabelSettings_figmh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="CanvasLayer/Control/Inventory"]
-layout_mode = 0
-offset_left = 89.0
-offset_top = 86.0
-offset_right = 1089.0
-offset_bottom = 614.0
-item_count = 5
-max_columns = 6
-same_column_width = true
-icon_mode = 0
-icon_scale = 4.0
-fixed_icon_size = Vector2i(60, 60)
-item_0/icon = ExtResource("6_q3xuo")
-item_1/icon = ExtResource("2_d1ipv")
-item_2/icon = ExtResource("7_y5srj")
-item_3/icon = ExtResource("6_oj1nk")
-item_4/icon = ExtResource("9_amtpu")
-
 [node name="Panel" type="Panel" parent="CanvasLayer/Control/Inventory"]
-visible = false
 layout_mode = 0
 offset_left = 79.0
 offset_top = 88.0
@@ -169,7 +149,7 @@ offset_right = 1095.0
 offset_bottom = 614.0
 theme = ExtResource("10_3h1t1")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory/Panel" groups=["journal_inside"]]
 layout_mode = 0
 offset_left = 496.0
 offset_top = 3.0
@@ -202,9 +182,19 @@ scale = Vector2(1.45, 1.45)
 texture = ExtResource("6_oj1nk")
 
 [node name="Icon" type="Sprite2D" parent="CanvasLayer/Control"]
-position = Vector2(594, 342)
+position = Vector2(583, 334)
 scale = Vector2(0.596875, 0.531875)
 texture = ExtResource("7_252vv")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Icon"]
+offset_left = -948.272
+offset_top = 454.994
+offset_right = -732.272
+offset_bottom = 562.994
+text = "[ E ] Interact
+[ Tab ] Journal
+[ Ctrl ] Crouch"
+label_settings = SubResource("LabelSettings_fy4og")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.979202, 0, 0, 0, 1, 0, 0.731353, -1.12726)

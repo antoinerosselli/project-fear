@@ -12,7 +12,6 @@ extends CharacterBody3D
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
-@onready var inventory_inside = $CanvasLayer/Control/Inventory/ItemList
 @onready var journal = $CanvasLayer/Control/Inventory/Panel
 @onready var journal_inside = $CanvasLayer/Control/Inventory/Panel/RichTextLabel
 
@@ -41,7 +40,7 @@ func _ready():
 
 func dialogues_manager():
 	show_text.text = dialogues[dialogues_id]
-	journal_inside.text += show_text.text + "\n"
+	Tools.add_journal("me", show_text.text, Color(0.881,0.48,0.145,1))
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
 	timer.start(1 + (tmp_array.size() / 2))
@@ -100,16 +99,6 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
-	if on_inventory == true:
-		if Input.is_action_just_pressed("changeleft") or Input.is_action_just_pressed("changeright"):
-			if label.text == "Journal":
-				label.text = "Inventory"
-				journal.visible = false
-				inventory_inside.visible = true
-			elif label.text == "Inventory":
-				label.text = "Journal"
-				inventory_inside.visible = false
-				journal.visible = true
 	if Input.is_action_just_pressed("crouch"):
 		if crouch == false:
 			camera_3d.position.y -= 1.3

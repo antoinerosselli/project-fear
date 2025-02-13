@@ -5,8 +5,10 @@
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="3_2v8d6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
-font_size = 35
+font_size = 49
 font_color = Color(0.831373, 0.45098, 0.141176, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1rv5"]
 bg_color = Color(0.0195939, 0.0588438, 0.0306887, 1)
@@ -30,9 +32,8 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 464.0
 offset_bottom = 152.0
-text = "Behind the light"
+text = "Signals of Discord"
 label_settings = SubResource("LabelSettings_jfdc4")
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="play_button" type="Button" parent="."]

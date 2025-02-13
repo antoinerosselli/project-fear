@@ -1,12 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=13 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
-[ext_resource type="AudioStream" uid="uid://c66e8ubfvjyve" path="res://Radio/float-void-144817.mp3" id="4_pkw88"]
 [ext_resource type="Texture2D" uid="uid://bhqewc124qxmp" path="res://Extern/Abandoned_House/Abandoned_House_Tele1.jpg" id="4_vwjea"]
-[ext_resource type="AudioStream" uid="uid://cmscfg5nt2lh2" path="res://Radio/ode-to-joy-piano-68697.mp3" id="5_md1ok"]
 [ext_resource type="Texture2D" uid="uid://d4cvdnvicq4d7" path="res://Extern/Abandoned_House/Abandoned_House_Piso_cocina.jpg" id="6_1c028"]
-[ext_resource type="AudioStream" uid="uid://b5t2wl86kf27k" path="res://Radio/red-and-blue-145386.mp3" id="6_2rr4k"]
 [ext_resource type="Script" path="res://Radio/node_of_knob.gd" id="7_y5w6w"]
 [ext_resource type="Script" path="res://Radio/label_3d.gd" id="9_8pyjm"]
 
@@ -65,13 +62,10 @@ unit_size = 1.0
 autoplay = true
 
 [node name="Audio1" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
-stream = ExtResource("4_pkw88")
 
 [node name="Audio2" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
-stream = ExtResource("5_md1ok")
 
 [node name="Audio3" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
-stream = ExtResource("6_2rr4k")
 
 [node name="Radio#NodeOfKnob" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065, -0.03, 0.029)

@@ -642,10 +642,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984962, 1.94241, 6.71348)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.59508, 0, 1.54481)
 stream = ExtResource("35_41xcc")
-volume_db = -11.034
-pitch_scale = 2.06
+unit_size = 1.0
 autoplay = true
-max_distance = 14.0
 parameters/looping = true
 
 [editable path="Node3D/Node3D/Lamp1"]

@@ -54,6 +54,16 @@ func radio_text(simple_text, time, color):
 	var timer = Timer.new()
 	timer.wait_time = time
 	timer.one_shot = true
-	timer.timeout.connect(func(): text_radio.text = "") 
+	timer.timeout.connect(func(): text_radio.text = "")
 	add_child(timer)
 	timer.start()
+	
+func add_journal(from, text, ncolor):
+	var journal_inside = get_tree().get_first_node_in_group("journal_inside")
+	if journal_inside and journal_inside is RichTextLabel:
+		journal_inside.bbcode_enabled = true
+		var color_string = ncolor.to_html(false)  # Convertit la couleur en code hexadécimal sans alpha
+		var formatted_text = "[color=#" + color_string + "]" + str(text) + "[/color]\n"
+		journal_inside.text += formatted_text
+	else:
+		print("Le nœud 'journal_inside' est introuvable ou n'est pas un RichTextLabel.")
