@@ -67,3 +67,19 @@ func add_journal(from, text, ncolor):
 		journal_inside.text += formatted_text
 	else:
 		print("Le nœud 'journal_inside' est introuvable ou n'est pas un RichTextLabel.")
+		
+func start_sound(path):
+	var event_sound = get_tree().get_first_node_in_group("event_sound")
+	event_sound.set_stream(load(path) as AudioStreamMP3)
+	event_sound.play()
+	
+func unlock_fm(what_fm):
+	if what_fm == "gouv":
+		get_tree().get_first_node_in_group("govfm").visible = true
+	if what_fm == "belle":
+		get_tree().get_first_node_in_group("bellefm").visible = true
+	if what_fm == "fanatic":
+		get_tree().get_first_node_in_group("fanaticfm").visible = true
+
+func spawn_conserve(i):
+	get_tree().get_first_node_in_group("spawner").spawn_conserve(i)

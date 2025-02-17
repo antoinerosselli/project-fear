@@ -47,3 +47,6 @@ func unique(object_name):
 			player.paused = true
 			player_camera.current = false
 			radio_camera.current = true
+		"conserve":
+			get_tree().get_first_node_in_group("foods").add_conserve()
+			print("TAKE FOOD")

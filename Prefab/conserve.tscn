@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://b66xcf4iuliyf"]
+
+[ext_resource type="Texture2D" uid="uid://bvedftgftbwbf" path="res://Sprite/rare-material-high-resolution-logo.png" id="1_3b1i8"]
+[ext_resource type="Texture2D" uid="uid://c2g03j5duu75f" path="res://Extern/Home kit 2/Textures/Water Jug/Water Jug_512.png" id="1_fyf7i"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kn3la"]
+height = 0.155733
+radius = 0.0892933
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2244"]
+albedo_texture = ExtResource("1_fyf7i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttagg"]
+albedo_texture = ExtResource("1_3b1i8")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_i618m"]
+material = SubResource("StandardMaterial3D_ttagg")
+
+[node name="Node3D" type="StaticBody3D" groups=["food"]]
+transform = Transform3D(0.893598, 0, 0, 0, 1, 0, 0, 0, 0.782051, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0730043, 0)
+shape = SubResource("CylinderShape3D_kn3la")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.155183, 0, 0, 0, 0.0764416, 0, 0, 0, 0.165269, 0, 0.0637507, 0)
+material_override = SubResource("StandardMaterial3D_x2244")
+mesh = SubResource("CylinderMesh_i618m")

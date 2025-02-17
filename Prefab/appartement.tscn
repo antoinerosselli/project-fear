@@ -1,4 +1,4 @@
-[gd_scene load_steps=196 format=4 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=197 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://eq53h40ecjin" path="res://Sprite/securenotice.png" id="44_588fe"]
 [ext_resource type="Texture2D" uid="uid://cjqwwk8cqcsjh" path="res://Extern/FONT/FMFM.png" id="45_q6c17"]
 [ext_resource type="PackedScene" uid="uid://pkajo8jayauf" path="res://Prefab/panneaupub.tscn" id="46_v4v21"]
+[ext_resource type="PackedScene" uid="uid://bjw6l2m3ltbkn" path="res://Prefab/foods.tscn" id="47_6cyh5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
 albedo_texture = ExtResource("1_ivsu5")
@@ -2099,10 +2100,14 @@ shape = SubResource("BoxShape3D_tytjf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40884, -0.147762, 2.34532)
 is_an_interruptor = true
 lamp = NodePath("../Lamp1")
+custom_range = 10.0
 script_trait = false
 
 [node name="Lamp1" parent="." instance=ExtResource("32_5p1tq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984962, 1.94241, 6.71348)
+
+[node name="OmniLight3D" parent="Lamp1" index="0"]
+light_size = 0.35
 
 [node name="frontdoor" parent="." instance=ExtResource("32_g21hh")]
 transform = Transform3D(-0.0576551, 0, -0.994218, 0, 1, 0, 1.08028, 0, -0.0530618, 16.1115, -1.54717, -0.129093)
@@ -2119,6 +2124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82241, 0.16344, -5.55802)
 item_name = "interrupteur2"
 is_an_interruptor = true
 lamp = NodePath("../Lamp2")
+custom_range = 15.0
 
 [node name="Lamp2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3561, 1.70016, -3.27553)
@@ -2133,6 +2139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81927, -0.203003, -2.75722)
 item_name = "interrupteur3"
 is_an_interruptor = true
 lamp = NodePath("../Lamp3")
+custom_range = 15.0
 
 [node name="Lamp3" parent="." instance=ExtResource("32_5p1tq")]
 transform = Transform3D(0.992745, 0, 0.120241, 0, 1, 0, -0.120241, 0, 0.992745, 15.6983, 1.62313, -2.31484)
@@ -2153,7 +2160,10 @@ transform = Transform3D(-0.999824, 0, 0.0187786, 0, 1, 0, -0.0187786, 0, -0.9998
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2385, 0.379485, -7.74736)
 
 [node name="Spawner" parent="." instance=ExtResource("40_q17al")]
-transform = Transform3D(3.30899, 0, 0, 0, 3.16137, 0, 0, 0, 3.77344, -12.5548, -1.43467, -0.376554)
+transform = Transform3D(1.93892, -0.085505, 3.05608, 0.124618, 3.15907, 0.0231081, -2.67852, 0.0850803, 2.2133, -12.5548, 2.53882, -0.376554)
+
+[node name="Marker3D" parent="Spawner" index="2"]
+transform = Transform3D(1, 9.31323e-09, 0, 3.72529e-08, 1, -4.84288e-08, 2.38419e-07, -7.45058e-09, 1, 0.0680661, -0.480643, 0.0137329)
 
 [node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
 transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.77569)
@@ -2224,9 +2234,23 @@ transform = Transform3D(0.00271992, 0, 0.296778, 0, 8.03263, 0, -0.237549, 0, 0.
 [node name="MeshInstance3D91" parent="." instance=ExtResource("23_anrvs")]
 transform = Transform3D(0.00271992, 0, 0.296778, 0, 8.03263, 0, -0.237549, 0, 0.00339808, 38.7939, -6.11483, 13.8039)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." groups=["event_sound"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.36143, 11.2067, 0)
+
+[node name="foods" parent="." instance=ExtResource("47_6cyh5")]
+transform = Transform3D(-0.121605, 0, 3.3266, 0, 2.6, 0, -2.71561, 0, -0.148966, 15.0922, -0.670697, 4.8262)
+
+[node name="conserve" parent="foods" index="0"]
+transform = Transform3D(0.48566, 0, 0, 0, 0.798433, 0, -5.58794e-09, 0, 0.477058, 0, 0, 0)
+
+[node name="CollisionShape3D" parent="foods/conserve" index="0"]
+transform = Transform3D(0.747481, 0, -1.8999e-07, 0, 1.00007, 0, 5.58794e-09, 0, 1.08851, -0.00639868, 0.0675342, 0.00335312)
+
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]
 [editable path="StaticBody3D3/Interrupteur"]
 [editable path="StaticBody3D3/Interrupteur2"]
+[editable path="Spawner"]
 [editable path="RadioObj"]
 [editable path="RadioObj/Radiooo"]
+[editable path="foods"]

@@ -1,4 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqbogskuhgkc8"]
+[gd_scene load_steps=7 format=3 uid="uid://bqbogskuhgkc8"]
+
+[ext_resource type="Script" path="res://Prefab/spawner.gd" id="1_kjt46"]
+[ext_resource type="PackedScene" uid="uid://h81pqsudld1o" path="res://Prefab/conserve_bis.tscn" id="2_jfb82"]
+[ext_resource type="Texture2D" uid="uid://br2epvynfbgyt" path="res://Extern/Home kit 2/Textures/Ashtray/Ashtray_256.png" id="2_wl5e7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n2o87"]
+albedo_texture = ExtResource("2_wl5e7")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_f8ygq"]
 
@@ -6,13 +13,19 @@
 height = 0.375961
 radius = 0.162401
 
-[node name="Spawner" type="StaticBody3D"]
+[node name="Spawner" type="StaticBody3D" groups=["spawner"]]
 transform = Transform3D(3.30899, 0, 0, 0, 1, 0, 0, 0, 3.77344, 0, 0, 0)
+script = ExtResource("1_kjt46")
+prefab_conserve = ExtResource("2_jfb82")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.31344, 0, 0, 0, 0.182043, 0, 0, 0, 0.349342, 0, -0.112111, 0)
+material_override = SubResource("StandardMaterial3D_n2o87")
 mesh = SubResource("CylinderMesh_f8ygq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.117255, 0)
 shape = SubResource("CylinderShape3D_laef4")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.818834, 0)

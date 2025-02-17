@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends Node3D
 
 @export var item_name:String
 
@@ -17,6 +17,7 @@ extends StaticBody3D
 @export var is_on:bool
 @export var is_an_interruptor:bool
 @export var lamp:Node3D
+@export var custom_range:float
 
 @export_category("have an unique trait ?")
 @export var script_trait:bool
@@ -38,7 +39,7 @@ func interact():
 		if UniqueTrait.elec == true :
 			if is_on == true:
 				var ligth = lamp.get_node("OmniLight3D")
-				ligth.omni_range = 5.0
+				ligth.omni_range = custom_range
 			elif  is_on == false:
 				var ligth = lamp.get_node("OmniLight3D")
 				ligth.omni_range = 0.0
