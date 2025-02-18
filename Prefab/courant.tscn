@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://do4vqec45hk5"]
+[gd_scene load_steps=7 format=3 uid="uid://do4vqec45hk5"]
 
 [ext_resource type="Script" path="res://Scripts/object.gd" id="1_pu7aw"]
+[ext_resource type="Texture2D" uid="uid://dcwuxy4f6p0di" path="res://Extern/textures/WallLong.png" id="2_4rbpc"]
 [ext_resource type="PackedScene" uid="uid://di2g1g6g2kpk8" path="res://Scene/stat_shower.tscn" id="2_4vjn1"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8edu"]
+albedo_texture = ExtResource("2_4rbpc")
+
 [sub_resource type="BoxMesh" id="BoxMesh_qsrww"]
+material = SubResource("StandardMaterial3D_w8edu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfr5x"]
 

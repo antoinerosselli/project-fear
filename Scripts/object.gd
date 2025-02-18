@@ -47,7 +47,3 @@ func interact():
 				ligth.omni_range = 0.0
 	if script_trait == true:
 		UniqueTrait.unique(item_name)
-
-
-func _process(delta):
-	pass

@@ -13,7 +13,6 @@ extends CharacterBody3D
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
 @onready var journal = $CanvasLayer/Control/Inventory/Panel
-@onready var journal_inside = $CanvasLayer/Control/Inventory/Panel/RichTextLabel
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -40,7 +39,7 @@ func _ready():
 
 func dialogues_manager():
 	show_text.text = dialogues[dialogues_id]
-	Tools.add_journal("me", show_text.text, Color(0.881,0.48,0.145,1))
+	Tools.add_journal(show_text.text, Color(0.881,0.48,0.145,1))
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
 	timer.start(1 + (tmp_array.size() / 2))
@@ -85,9 +84,9 @@ func _physics_process(delta):
 			can_interact = false
 
 func camera_joystick():
-	var input_dir = Vector2(
-		Input.get_joy_axis(0, 2),  # Axis 2 (right joystick horizontal)
-		Input.get_joy_axis(0, 3)   # Axis 3 (right joystick vertical)
+	var input_dir:Vector2 = Vector2(
+		Input.get_joy_axis(0, 2),  
+		Input.get_joy_axis(0, 3)
 	)
 
 	rotate_y(-input_dir.x * camera_sensitivity)

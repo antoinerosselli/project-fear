@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=23 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
 [ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
@@ -15,8 +15,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
-shader_parameter/resolution = Vector2(430, 280)
-shader_parameter/scan_line_amount = 0.286
+shader_parameter/resolution = Vector2(500, 380)
+shader_parameter/scan_line_amount = 0.121
 shader_parameter/warp_amount = 0.0
 shader_parameter/noise_amount = 0.0
 shader_parameter/interference_amount = 0.148
@@ -49,6 +49,9 @@ font_color = Color(0.869021, 0.624595, 0.144077, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js7tg"]
 bg_color = Color(0.607843, 0.678431, 0.717647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcaej"]
+bg_color = Color(0.215686, 0.247059, 0.266667, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6h77"]
 texture = ExtResource("7_4xja3")
@@ -157,11 +160,19 @@ offset_right = 1128.0
 offset_bottom = 620.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_js7tg")
 
+[node name="Panel3" type="Panel" parent="CanvasLayer/Control/Inventory"]
+layout_mode = 0
+offset_left = 594.0
+offset_top = 108.0
+offset_right = 1114.0
+offset_bottom = 608.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hcaej")
+
 [node name="Panel" type="Panel" parent="CanvasLayer/Control/Inventory"]
 layout_mode = 0
-offset_left = 77.0
+offset_left = 56.0
 offset_top = 91.0
-offset_right = 574.0
+offset_right = 553.0
 offset_bottom = 339.0
 theme = ExtResource("10_3h1t1")
 theme_override_styles/panel = SubResource("StyleBoxTexture_x6h77")
@@ -210,13 +221,14 @@ vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory" groups=["journal_inside"]]
 layout_mode = 0
-offset_left = 595.0
-offset_top = 101.0
-offset_right = 1112.0
-offset_bottom = 610.0
+offset_left = 613.0
+offset_top = 124.0
+offset_right = 1100.0
+offset_bottom = 595.0
 theme = ExtResource("10_3h1t1")
 scroll_active = false
 scroll_following = true
+tab_size = 15
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 visible = false

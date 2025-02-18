@@ -20,9 +20,11 @@ func unique(object_name):
 			player_camera.current = false
 			door_camera.current = true
 		"blue_lamp":
+			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(0, 0, 1, 1)
 		"red_lamp":
+			Tools.sound_now(Tools.get_player(), load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 			var lamp_door = get_tree().get_first_node_in_group("lamp_door")
 			lamp_door.light_color = Color(1, 0, 0, 1)
 		"sancheck":

@@ -60,7 +60,7 @@ func radio_text(simple_text, time, color):
 	add_child(timer)
 	timer.start()
 	
-func add_journal(from, text, ncolor):
+func add_journal(text, ncolor):
 	var journal_inside = get_tree().get_first_node_in_group("journal_inside")
 	if journal_inside and journal_inside is RichTextLabel:
 		journal_inside.bbcode_enabled = true
