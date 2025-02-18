@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/stat_shower.gd" id="1_i5brw"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="1_w332v"]
 
-
 [sub_resource type="ViewportTexture" id="ViewportTexture_xoahl"]
 viewport_path = NodePath("SubViewport")
 
@@ -36,5 +35,11 @@ offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "0%"
+text = "90%"
 label_settings = SubResource("LabelSettings_au7w6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

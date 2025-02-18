@@ -13,7 +13,7 @@ lightmap_size_hint = Vector2i(14, 21)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8yjkg"]
 size = Vector3(0.0876465, 0.191223, 0.125977)
 
-[node name="Interrupteur" type="StaticBody3D"]
+[node name="Interrupteur" type="StaticBody3D" groups=["inter"]]
 script = ExtResource("1_6vr43")
 item_name = "interrupteur1"
 script_trait = true

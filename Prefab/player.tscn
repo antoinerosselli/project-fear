@@ -199,6 +199,7 @@ vertical_alignment = 1
 
 [node name="COMPLOTFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["fanaticfm"]]
 visible = false
+layout_mode = 0
 offset_left = 3.0
 offset_top = 155.0
 offset_right = 479.0

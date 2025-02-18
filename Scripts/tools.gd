@@ -2,6 +2,8 @@ extends Node
 
 const ICON = preload("res://Sprite/icon.svg")
 
+var val_elec:int = 90
+
 func get_icon(item_name):
 	match item_name:
 		"test":
@@ -83,3 +85,9 @@ func unlock_fm(what_fm):
 
 func spawn_conserve(i):
 	get_tree().get_first_node_in_group("spawner").spawn_conserve(i)
+	
+func get_elec():
+	return val_elec
+	
+func set_elec(nval):
+	val_elec = nval
