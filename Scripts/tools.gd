@@ -91,3 +91,21 @@ func get_elec():
 	
 func set_elec(nval):
 	val_elec = nval
+
+func San_modif(santexture):
+	var sanmodif = get_tree().get_first_node_in_group("sanmodif")
+	sanmodif.set_texture(load(santexture) as Texture2D)
+
+
+func sound_now(here: Node3D, what_sound: AudioStream):
+	if not here or not what_sound:
+		print("Erreur: Paramètres invalides (here ou what_sound manquant)")
+		return
+		
+	var audio_player = AudioStreamPlayer3D.new()
+	audio_player.stream = what_sound
+	audio_player.global_position = here.global_position 
+	audio_player.autoplay = true 
+	audio_player.finished.connect(func(): audio_player.queue_free())
+
+	here.get_parent().add_child(audio_player)

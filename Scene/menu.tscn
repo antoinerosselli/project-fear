@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://saktvxup8cjo"]
 
-[ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_dyjtc"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_sb1jo"]
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="3_2v8d6"]
+[ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="3_lbxic"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jfdc4"]
 font_size = 49
@@ -69,9 +69,9 @@ text = "quit
 "
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(1080, 576)
-scale = Vector2(0.197292, 0.171514)
-texture = ExtResource("1_dyjtc")
+position = Vector2(1040, 544)
+scale = Vector2(0.541334, 0.556345)
+texture = ExtResource("3_lbxic")
 
 [node name="credits" type="Panel" parent="."]
 visible = false

@@ -32,9 +32,11 @@ func interact():
 	if pickable == true:
 		queue_free()
 	if door == true:
+		Tools.sound_now(self, load("res://Music&Sound/sound/door_sound.mp3") as AudioStream)
 		transform.basis = Basis(Vector3(0, 1, 0), rotation_amount) * transform.basis
 		rotation_amount = -(rotation_amount)
 	if is_an_interruptor == true:
+		Tools.sound_now(self, load("res://Music&Sound/sound/interrupteur_sound.mp3") as AudioStream)
 		is_on = !is_on
 		if UniqueTrait.elec == true :
 			if is_on == true:

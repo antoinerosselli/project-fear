@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b7ifffa1oq6ok"]
 
 [ext_resource type="Script" path="res://Scripts/bumpers.gd" id="1_hxbka"]
-[ext_resource type="Texture2D" uid="uid://b2wush83tevr5" path="res://Sprite/image.png" id="1_sps8u"]
+[ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="2_i2yhk"]
 [ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Scene/neighing-of-a-horse-154724.mp3" id="3_muw33"]
 
 [node name="Bumpers" type="Control"]
@@ -22,9 +22,9 @@ offset_bottom = 656.0
 color = Color(0, 0.209065, 0.192006, 1)
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(568, 304)
-scale = Vector2(0.542636, 0.495812)
-texture = ExtResource("1_sps8u")
+position = Vector2(565, 331.679)
+scale = Vector2(0.953182, 0.932075)
+texture = ExtResource("2_i2yhk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_muw33")

@@ -28,10 +28,13 @@ func unique(object_name):
 		"sancheck":
 			if elec == true :
 				var player = Tools.get_player()
+				Tools.sound_now(player,load("res://Music&Sound/sound/sancheck_sound.mp3") as AudioStream)
 				if player.sanity >= 70: 
-					player.dialogues = ["Tout à l'air bon"]
-				elif player.sanity <= 70:
-					player.dialogues = ["Plus rien ne va..."]
+					Tools.San_modif("res://Sprite/sancheck_ok.png")
+				elif player.sanity <= 70 and player.sanity >= 30:
+					Tools.San_modif("res://Sprite/sancheck_mid.png")
+				elif player.sanity < 30:
+					Tools.San_modif("res://Sprite/sancheck_bad.png")
 		"courant":
 			elec = !elec
 		"radio":
