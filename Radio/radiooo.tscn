@@ -1,5 +1,4 @@
-
-[gd_scene load_steps=17 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=14 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]

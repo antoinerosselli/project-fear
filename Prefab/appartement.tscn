@@ -1,5 +1,4 @@
-[gd_scene load_steps=197 format=4 uid="uid://cgp8iojh0a330"]
-
+[gd_scene load_steps=199 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -48,6 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://cjqwwk8cqcsjh" path="res://Extern/FONT/FMFM.png" id="45_q6c17"]
 [ext_resource type="PackedScene" uid="uid://pkajo8jayauf" path="res://Prefab/panneaupub.tscn" id="46_v4v21"]
 [ext_resource type="PackedScene" uid="uid://bjw6l2m3ltbkn" path="res://Prefab/foods.tscn" id="47_6cyh5"]
+[ext_resource type="PackedScene" uid="uid://bfihnkj3effvp" path="res://Alarme/alarme.tscn" id="48_gcctg"]
+[ext_resource type="Script" path="res://Prefab/time_system.gd" id="48_osms8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
 albedo_texture = ExtResource("1_ivsu5")
@@ -2256,6 +2257,11 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_uls34")
 
+[node name="Alarme" parent="." instance=ExtResource("48_gcctg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.1384, -0.817415, -4.95409)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("48_osms8")
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]
