@@ -1,5 +1,6 @@
 [gd_scene load_steps=197 format=4 uid="uid://cgp8iojh0a330"]
 
+
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
 [ext_resource type="Texture2D" uid="uid://chwbx4kif6dbs" path="res://Extern/Abandoned_House/Abandoned_House_t (28).jpg" id="2_na27r"]
@@ -2254,6 +2255,7 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D92/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_uls34")
+
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]

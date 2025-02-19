@@ -60,9 +60,3 @@ func radio_usage():
 		player.paused = false
 		player_camera.current = true
 		radio_camera.current = false
-
-	#if Input.is_action_pressed("changeleft"):
-		#Radio.setValue(Radio.getValue() - 0.2)
-	#elif Input.is_action_pressed("changeright"):
-		#Radio.setValue(Radio.getValue() + 0.2)
-	print(Radio.getValue())
