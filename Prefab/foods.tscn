@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjw6l2m3ltbkn"]
+
+[ext_resource type="Script" path="res://Prefab/foods.gd" id="1_lj0s5"]
+[ext_resource type="PackedScene" uid="uid://b66xcf4iuliyf" path="res://Prefab/conserve.tscn" id="2_52h5e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6qv6u"]
+size = Vector3(0.725861, 0.110504, 0.240723)
+
+[node name="foods" type="Node3D" groups=["foods"]]
+transform = Transform3D(0.567116, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_lj0s5")
+prefab_conserve = ExtResource("2_52h5e")
+
+[node name="conserve" type="Area3D" parent="."]
+transform = Transform3D(0.634908, 0, 0, 0, 0.798433, 0, 0, 0, 0.422132, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="conserve"]
+transform = Transform3D(0.708884, 0, 0, 0, 1.00007, 0, 0, 0, 1, 0.0170422, 0.0675342, 0.00335403)
+shape = SubResource("BoxShape3D_6qv6u")

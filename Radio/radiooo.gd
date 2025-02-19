@@ -8,7 +8,7 @@ extends Node3D
 func _ready():
 	audioStream.play()
 
-func _process(data):
+func _process(_data):
 	var player = Tools.get_player()
 	if player.use_radio == true:
 		radio_usage()

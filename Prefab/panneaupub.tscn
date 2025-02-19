@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://pkajo8jayauf"]
+
+[ext_resource type="Texture2D" uid="uid://dl8f88ew2cnf8" path="res://Extern/FONT/belleradio.png" id="1_c4hv1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dyajq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35095, 0)
+texture = ExtResource("1_c4hv1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.548123, 0, 0, 0, 3.9958, 0, 0, 0, 0.429534, -3, -3.46556, -0.226873)
+mesh = SubResource("BoxMesh_dyajq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.548123, 0, 0, 0, 3.9958, 0, 0, 0, 0.429534, 3.5319, -3.46556, -0.226873)
+mesh = SubResource("BoxMesh_dyajq")

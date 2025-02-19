@@ -1,0 +1,33 @@
+[gd_scene load_steps=8 format=3 uid="uid://h81pqsudld1o"]
+
+[ext_resource type="Texture2D" uid="uid://c2g03j5duu75f" path="res://Extern/Home kit 2/Textures/Water Jug/Water Jug_512.png" id="1_223e4"]
+[ext_resource type="Script" path="res://Scripts/object.gd" id="1_qwj77"]
+[ext_resource type="Texture2D" uid="uid://bvedftgftbwbf" path="res://Sprite/rare-material-high-resolution-logo.png" id="2_h7k5o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lvhjy"]
+size = Vector3(0.92041, 0.86377, 0.826935)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lcoot"]
+albedo_texture = ExtResource("1_223e4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vfo8i"]
+albedo_texture = ExtResource("2_h7k5o")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vcqb1"]
+material = SubResource("StandardMaterial3D_vfo8i")
+
+[node name="conserveBis" type="RigidBody3D"]
+transform = Transform3D(0.552424, 0, 0, 0, 0.508052, 0, 0, 0, 0.503703, 0, 0, 0)
+script = ExtResource("1_qwj77")
+item_name = "conserve"
+pickable = true
+script_trait = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.916159, 0, 0, 0, 0.916159, 0, 0, 0, 0.916159, 0.0364585, 0.0681152, 0.0195852)
+shape = SubResource("BoxShape3D_lvhjy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.729862, 0, 0, 0, 0.431405, 0, 0, 0, 0.767466, 0, 0.0637507, 0)
+material_override = SubResource("StandardMaterial3D_lcoot")
+mesh = SubResource("CylinderMesh_vcqb1")

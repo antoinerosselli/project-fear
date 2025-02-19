@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
 @onready var timer = $CanvasLayer/Control/show_text/Timer
 @onready var show_text = $CanvasLayer/Control/show_text
+@onready var show_text_radio = $CanvasLayer/Control/show_text_radio
 @onready var inventory = $CanvasLayer/Control/Inventory
 @onready var logo_inter = $CanvasLayer/Control/Label
 @onready var camera_3d = $Camera3D
@@ -11,9 +12,7 @@ extends CharacterBody3D
 #inventory
 var on_inventory:bool = false
 @onready var label = $CanvasLayer/Control/Inventory/Label
-@onready var inventory_inside = $CanvasLayer/Control/Inventory/ItemList
 @onready var journal = $CanvasLayer/Control/Inventory/Panel
-@onready var journal_inside = $CanvasLayer/Control/Inventory/Panel/RichTextLabel
 
 var dialogues_id:int = 0
 var dialogues:Array = []
@@ -40,7 +39,7 @@ func _ready():
 
 func dialogues_manager():
 	show_text.text = dialogues[dialogues_id]
-	journal_inside.text += show_text.text + "\n"
+	Tools.add_journal(show_text.text, Color(0.881,0.48,0.145,1))
 	read_dialogue = true
 	var tmp_array = dialogues[dialogues_id].rsplit(" ", true, 1)
 	timer.start(1 + (tmp_array.size() / 2))
@@ -85,9 +84,9 @@ func _physics_process(delta):
 			can_interact = false
 
 func camera_joystick():
-	var input_dir = Vector2(
-		Input.get_joy_axis(0, 2),  # Axis 2 (right joystick horizontal)
-		Input.get_joy_axis(0, 3)   # Axis 3 (right joystick vertical)
+	var input_dir:Vector2 = Vector2(
+		Input.get_joy_axis(0, 2),  
+		Input.get_joy_axis(0, 3)
 	)
 
 	rotate_y(-input_dir.x * camera_sensitivity)
@@ -99,16 +98,6 @@ func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		Tools.call_pause()
 		paused = !paused
-	if on_inventory == true:
-		if Input.is_action_just_pressed("changeleft") or Input.is_action_just_pressed("changeright"):
-			if label.text == "Journal":
-				label.text = "Inventory"
-				journal.visible = false
-				inventory_inside.visible = true
-			elif label.text == "Inventory":
-				label.text = "Journal"
-				inventory_inside.visible = false
-				journal.visible = true
 	if Input.is_action_just_pressed("crouch"):
 		if crouch == false:
 			camera_3d.position.y -= 1.3
