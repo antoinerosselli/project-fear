@@ -20,6 +20,7 @@ config/icon="res://Sprite/icon.svg"
 Tools="*res://Scripts/tools.gd"
 UniqueTrait="*res://Scripts/unique_trait.gd"
 Radio="*res://Radio/radio.gd"
+Horloge="*res://date_time.gd"
 
 [display]
 

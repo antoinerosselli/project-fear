@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfihnkj3effvp"]
+
+[ext_resource type="Script" path="res://Alarme/alarme.gd" id="1_f0nq0"]
+[ext_resource type="FontFile" uid="uid://ce3an0yfkfats" path="res://Alarme/BD Times_New_Digital_St_Bold.otf" id="2_nfwef"]
+
+[node name="Alarme" type="Node3D"]
+script = ExtResource("1_f0nq0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, 0)
+size = Vector3(0.397461, 0.268829, 0.721191)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Time" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.199279, 0.12109, 0)
+modulate = Color(0.738038, 0.508967, 0.374836, 1)
+text = "6:00"
+font = ExtResource("2_nfwef")
+font_size = 38
+outline_size = 5
