@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=4 uid="uid://cgp8iojh0a330"]
+[gd_scene load_steps=179 format=4 uid="uid://cgp8iojh0a330"]
 
 [ext_resource type="Texture2D" uid="uid://ctfauvn3uialq" path="res://Extern/Abandoned_House/Textures/Madera1.jpg" id="1_ivsu5"]
 [ext_resource type="Texture2D" uid="uid://d08j2rcydgxft" path="res://Extern/Architecture Textures/Wood Floor 2.png" id="2_gtmph"]
@@ -38,8 +38,10 @@
 [ext_resource type="Script" path="res://Scripts/lamp.gd" id="34_mgl20"]
 [ext_resource type="PackedScene" uid="uid://kqj8fx624wri" path="res://Prefab/san_check.tscn" id="35_2b1nk"]
 [ext_resource type="PackedScene" uid="uid://do4vqec45hk5" path="res://Prefab/courant.tscn" id="37_uj65h"]
-[ext_resource type="PackedScene" uid="uid://jgo413cihxir" path="res://radio_obj.tscn" id="40_ijhvj"]
+[ext_resource type="PackedScene" path="res://radio_obj.tscn" id="40_ijhvj"]
 [ext_resource type="PackedScene" uid="uid://bqbogskuhgkc8" path="res://Prefab/spawner.tscn" id="40_q17al"]
+[ext_resource type="PackedScene" uid="uid://bfihnkj3effvp" path="res://Alarme/alarme.tscn" id="41_b5iow"]
+[ext_resource type="Script" path="res://Prefab/time_system.gd" id="41_lx7bm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3bvj"]
 albedo_texture = ExtResource("1_ivsu5")
@@ -1993,6 +1995,13 @@ transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.06056
 [node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
 transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.1035, -0.441262, -3.74333)
 fov = 69.6711
+
+[node name="Alarme" parent="." instance=ExtResource("41_b5iow")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.8157, -0.804047, -4.79685)
+
+[node name="TimeSystem" type="Node" parent="."]
+script = ExtResource("41_lx7bm")
+ticks_per_second = 6
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]

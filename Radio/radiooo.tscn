@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://chacbj2q6jcmg"]
+[gd_scene load_steps=17 format=4 uid="uid://chacbj2q6jcmg"]
 
 [ext_resource type="Script" path="res://Radio/radiooo.gd" id="1_hs2vg"]
 [ext_resource type="AudioStream" uid="uid://b4tgh733fxn0h" path="res://Radio/edm-static-240838.mp3" id="3_gpaep"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b5t2wl86kf27k" path="res://Radio/red-and-blue-145386.mp3" id="6_2rr4k"]
 [ext_resource type="Script" path="res://Radio/node_of_knob.gd" id="7_y5w6w"]
 [ext_resource type="Script" path="res://Radio/label_3d.gd" id="9_8pyjm"]
+[ext_resource type="FontFile" uid="uid://c4slo7siafa6k" path="res://Alarme/alarm clock.ttf" id="9_m22gx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whav6"]
 albedo_texture = ExtResource("6_1c028")
@@ -109,8 +110,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.08, 
 pixel_size = 0.001
 double_sided = false
 text = "FM 0.0"
-font_size = 34
-outline_size = 10
+font = ExtResource("9_m22gx")
+font_size = 46
+outline_size = 8
 script = ExtResource("9_8pyjm")
 
 [connection signal="finished" from="AudioStreamPlayer3D" to="." method="_on_audio_stream_player_3d_finished"]
