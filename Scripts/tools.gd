@@ -109,3 +109,8 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 	audio_player.finished.connect(func(): audio_player.queue_free())
 
 	here.get_parent().add_child(audio_player)
+
+
+func start_transition(text):
+	var cl = get_tree().get_first_node_in_group("transi")
+	cl.transition(text)

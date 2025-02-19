@@ -1469,7 +1469,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
 shape = SubResource("BoxShape3D_uls34")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="."]
-transform = Transform3D(27.5484, 0, 0, 0, 0.558697, 0, 0, 0, 28.4472, 7.15514, 2.22476, 0.454076)
+transform = Transform3D(27.5484, 0, 0, 0, 0.558697, 0, 0, 0, 28.4472, 7.15514, 2.25, 0.454076)
 mesh = SubResource("BoxMesh_410gc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D26"]
@@ -1698,17 +1698,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 1.32349e-23, 0, -1.32349e-23, 1, 0.344572
 material_override = SubResource("StandardMaterial3D_ye2us")
 mesh = SubResource("ArrayMesh_ksgyc")
 skeleton = NodePath("")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0338973, 0, 0.998067, 0, 0.18825, 0, -1.04269, 0, 0.0324466, 16.2745, 1.72856, 2.85182)
-mesh = SubResource("BoxMesh_hi8ft")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D15"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D15/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
-shape = SubResource("BoxShape3D_uls34")
 
 [node name="Dishwasher 2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.999497, -2.39383e-09, 0.0317073, 0, 1, 7.54979e-08, -0.0317073, 7.54599e-08, -0.999497, 15.2625, -1.06653, 7.47581)
@@ -2085,7 +2074,7 @@ material_override = SubResource("StandardMaterial3D_t4xhp")
 mesh = SubResource("PlaneMesh_qspml")
 
 [node name="MeshInstance3D88" type="MeshInstance3D" parent="."]
-transform = Transform3D(12.6098, 0, 0, 0, 0.558697, 0, 0, 0, 15.4081, -12.7309, 2.13307, -1.64237)
+transform = Transform3D(12.6098, 0, 0, 0, 0.558697, 0, 0, 0, 15.4081, -12.731, 2.24, -1.642)
 mesh = SubResource("BoxMesh_410gc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D88"]
@@ -2254,6 +2243,17 @@ transform = Transform3D(0.48566, 0, 0, 0, 0.798433, 0, -5.58794e-09, 0, 0.477058
 
 [node name="CollisionShape3D" parent="foods/conserve" index="0"]
 transform = Transform3D(0.747481, 0, -1.8999e-07, 0, 1.00007, 0, 5.58794e-09, 0, 1.08851, -0.00639868, 0.0675342, 0.00335312)
+
+[node name="MeshInstance3D92" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.040237, 0, 1.00311, 0, 0.431524, 0, -0.377505, 0, 0.106919, 16.4045, 2.17344, 0.591366)
+mesh = SubResource("BoxMesh_hi8ft")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D92"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D92/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0184631, 0.0324707, 0)
+shape = SubResource("BoxShape3D_uls34")
 
 [editable path="Lamp1"]
 [editable path="StaticBody3D3"]

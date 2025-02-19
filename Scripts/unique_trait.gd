@@ -37,6 +37,7 @@ func unique(object_name):
 					Tools.San_modif("res://Sprite/sancheck_mid.png")
 				elif player.sanity < 30:
 					Tools.San_modif("res://Sprite/sancheck_bad.png")
+					Tools.start_transition("couille")
 		"courant":
 			elec = !elec
 		"radio":
