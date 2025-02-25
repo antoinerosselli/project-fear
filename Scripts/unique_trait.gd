@@ -37,7 +37,6 @@ func unique(object_name):
 					Tools.San_modif("res://Sprite/sancheck_mid.png")
 				elif player.sanity < 30:
 					Tools.San_modif("res://Sprite/sancheck_bad.png")
-					Tools.start_transition("couille")
 		"courant":
 			elec = !elec
 		"radio":
@@ -56,3 +55,5 @@ func unique(object_name):
 		"conserve":
 			get_tree().get_first_node_in_group("foods").add_conserve()
 			print("TAKE FOOD")
+		"pills":
+			Tools.start_transition("1 MONTH LATER")

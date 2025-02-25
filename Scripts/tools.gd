@@ -51,7 +51,8 @@ func set_radio_sound(channel,sound):
 func radio_text(simple_text, time, color):
 	var player = Tools.get_player()
 	var text_radio = player.get_node("CanvasLayer/Control/show_text_radio")
-	text_radio.text = simple_text
+	var mod_text = '[wave amp=10.0 freq=3.0][center]' + simple_text + '[/center][/wave]'
+	text_radio.text = mod_text
 	text_radio.modulate = color
 	var timer = Timer.new()
 	timer.wait_time = time
@@ -114,3 +115,9 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 func start_transition(text):
 	var cl = get_tree().get_first_node_in_group("transi")
 	cl.transition(text)
+	
+func eotd():
+	var alarm =  get_tree().get_first_node_in_group("alarmepills")
+	var pills = get_tree().get_first_node_in_group("pills")
+	alarm.go_bip()
+	pills.spawn()

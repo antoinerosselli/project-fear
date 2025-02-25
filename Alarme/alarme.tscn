@@ -1,16 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfihnkj3effvp"]
+[gd_scene load_steps=5 format=3 uid="uid://bfihnkj3effvp"]
 
 [ext_resource type="Script" path="res://Alarme/alarme.gd" id="1_f0nq0"]
+[ext_resource type="AudioStream" uid="uid://61hpi3snxrn2" path="res://Music&Sound/sound/alarmpills_sound.mp3" id="2_iap18"]
 [ext_resource type="FontFile" uid="uid://ce3an0yfkfats" path="res://Alarme/BD Times_New_Digital_St_Bold.otf" id="2_nfwef"]
 
-[node name="Alarme" type="Node3D"]
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_ijl1u"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Alarme" type="Node3D" groups=["alarmepills"]]
 script = ExtResource("1_f0nq0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, 0)
+material_override = SubResource("ORMMaterial3D_ijl1u")
 size = Vector3(0.397461, 0.268829, 0.721191)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_iap18")
 
 [node name="Time" type="Label3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.199279, 0.12109, 0)
@@ -19,3 +25,8 @@ text = "6:00"
 font = ExtResource("2_nfwef")
 font_size = 38
 outline_size = 5
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

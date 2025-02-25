@@ -1,22 +1,23 @@
-[gd_scene load_steps=24 format=3 uid="uid://nph7hef7wvt0"]
+[gd_scene load_steps=26 format=3 uid="uid://nph7hef7wvt0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_cc2ll"]
-[ext_resource type="Texture2D" uid="uid://coo11wwyo447x" path="res://Sprite/icon.svg" id="2_d1ipv"]
 [ext_resource type="Script" path="res://Scripts/Camera3D.gd" id="2_pajc1"]
 [ext_resource type="Shader" path="res://Shader/psxcameraeffect.gdshader" id="4_evs1m"]
+[ext_resource type="Texture2D" uid="uid://cpxh0j8eqp0ia" path="res://Sprite/Carnet.png" id="6_htqqd"]
 [ext_resource type="Texture2D" uid="uid://bds6idchttvqj" path="res://Sprite/mainorange.png" id="6_oj1nk"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="6_v1iah"]
-[ext_resource type="Texture2D" uid="uid://uei242ncf5o3" path="res://Sprite/frequancyjournal.png" id="7_4xja3"]
+[ext_resource type="Texture2D" uid="uid://boqoqorx68jb3" path="res://Scene/Radio.png" id="7_6hmev"]
 [ext_resource type="Texture2D" uid="uid://b2npicerqcxp1" path="res://Sprite/visor.png" id="7_252vv"]
 [ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="10_3h1t1"]
 [ext_resource type="PackedScene" uid="uid://dee4yq0rea45s" path="res://Prefab/transition_setup.tscn" id="11_7q8gp"]
 [ext_resource type="AudioStream" uid="uid://b0jngj4uq3osf" path="res://Music&Sound/hearbeat-71701.mp3" id="12_utawn"]
+[ext_resource type="Shader" path="res://Shader/tr.gdshader" id="12_x4psa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_17q4h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h2w04"]
 shader = ExtResource("4_evs1m")
-shader_parameter/resolution = Vector2(500, 380)
+shader_parameter/resolution = Vector2(470, 380)
 shader_parameter/scan_line_amount = 0.121
 shader_parameter/warp_amount = 0.0
 shader_parameter/noise_amount = 0.0
@@ -33,12 +34,14 @@ shader_parameter/pixel_strength = -0.135
 
 [sub_resource type="LabelSettings" id="LabelSettings_mb3ur"]
 font = ExtResource("6_v1iah")
-font_size = 30
+font_size = 20
 font_color = Color(1, 0.584314, 0.12549, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_i3nvd"]
-font = ExtResource("6_v1iah")
-font_size = 30
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_65idd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ja16"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi1ut"]
 bg_color = Color(0.0295066, 0.0295066, 0.0295065, 1)
@@ -48,17 +51,16 @@ font = ExtResource("6_v1iah")
 font_size = 30
 font_color = Color(0.869021, 0.624595, 0.144077, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_js7tg"]
-bg_color = Color(0.607843, 0.678431, 0.717647, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcaej"]
-bg_color = Color(0.215686, 0.247059, 0.266667, 1)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6h77"]
-texture = ExtResource("7_4xja3")
 
-[sub_resource type="LabelSettings" id="LabelSettings_oeckh"]
-font_color = Color(0.854902, 0.611765, 0.141176, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_7st8c"]
+font = ExtResource("6_v1iah")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_bv1s3"]
+font = ExtResource("6_v1iah")
+font_size = 22
+font_color = Color(0.870588, 0.623529, 0.145098, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cck1k"]
 font = ExtResource("6_v1iah")
@@ -70,6 +72,19 @@ outline_color = Color(0.870588, 0.623529, 0.145098, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_fy4og"]
 font = ExtResource("6_v1iah")
 font_size = 25
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe2cg"]
+resource_local_to_scene = true
+shader = ExtResource("12_x4psa")
+shader_parameter/baseColor = Color(0, 0, 0, 1)
+shader_parameter/dissolveSlider = 0.385
+shader_parameter/holeScale = 15.0
+shader_parameter/holeDensity = 1.5
+shader_parameter/edgeColor = Color(0.980392, 0.568627, 0.258824, 1)
+shader_parameter/edgeThickness = 0.252
+shader_parameter/edgeGlowIntensity = 5.0
+shader_parameter/enable_dissolve_animation = false
+shader_parameter/animation_speed = 0.6
 
 [node name="CharacterBody3D" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1.02124, 0, 0, 0, 1, 0, 0.61745, 0)
@@ -89,9 +104,6 @@ debug_shape_thickness = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_17q4h")
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-texture = ExtResource("2_d1ipv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -124,14 +136,15 @@ autowrap_mode = 3
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text"]
 wait_time = 4.0
 
-[node name="show_text_radio" type="Label" parent="CanvasLayer/Control"]
+[node name="show_text_radio" type="RichTextLabel" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_top = 22.0
+offset_top = 62.0
 offset_right = 1152.0
-offset_bottom = 145.0
-label_settings = SubResource("LabelSettings_i3nvd")
-horizontal_alignment = 1
-vertical_alignment = 1
+offset_bottom = 126.0
+theme = ExtResource("10_3h1t1")
+theme_override_styles/background = SubResource("StyleBoxFlat_65idd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ja16")
+bbcode_enabled = true
 autowrap_mode = 2
 
 [node name="Timer" type="Timer" parent="CanvasLayer/Control/show_text_radio"]
@@ -153,21 +166,10 @@ label_settings = SubResource("LabelSettings_figmh")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Panel2" type="Panel" parent="CanvasLayer/Control/Inventory"]
-layout_mode = 0
-offset_left = 582.0
-offset_top = 91.0
-offset_right = 1128.0
-offset_bottom = 620.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_js7tg")
-
-[node name="Panel3" type="Panel" parent="CanvasLayer/Control/Inventory"]
-layout_mode = 0
-offset_left = 594.0
-offset_top = 108.0
-offset_right = 1114.0
-offset_bottom = 608.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_hcaej")
+[node name="Panel2" type="Sprite2D" parent="CanvasLayer/Control/Inventory"]
+position = Vector2(834, 331.5)
+scale = Vector2(3.09542, 2.68333)
+texture = ExtResource("6_htqqd")
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control/Inventory"]
 layout_mode = 0
@@ -178,55 +180,63 @@ offset_bottom = 339.0
 theme = ExtResource("10_3h1t1")
 theme_override_styles/panel = SubResource("StyleBoxTexture_x6h77")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory/Panel"]
-layout_mode = 0
-offset_left = 190.0
-offset_top = 33.0
-offset_right = 295.0
-offset_bottom = 56.0
-text = "Frequency"
-label_settings = SubResource("LabelSettings_oeckh")
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/Inventory/Panel"]
+position = Vector2(287, 204)
+scale = Vector2(3.71333, 3.13333)
+texture = ExtResource("7_6hmev")
 
 [node name="GOVFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["govfm"]]
 visible = false
 layout_mode = 0
-offset_left = 2.0
-offset_top = 79.0
-offset_right = 478.0
-offset_bottom = 96.0
+offset_left = 278.0
+offset_top = 177.0
+offset_right = 441.0
+offset_bottom = 194.0
 text = "GOV FM 54 - 64"
+label_settings = SubResource("LabelSettings_7st8c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BELLEFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["bellefm"]]
 visible = false
 layout_mode = 0
-offset_left = 2.0
-offset_top = 117.0
-offset_right = 478.0
-offset_bottom = 134.0
+offset_left = 260.0
+offset_top = 206.0
+offset_right = 458.0
+offset_bottom = 223.0
 text = "BELLE FM 22 - 32"
+label_settings = SubResource("LabelSettings_7st8c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="COMPLOTFM" type="Label" parent="CanvasLayer/Control/Inventory/Panel" groups=["fanaticfm"]]
 visible = false
 layout_mode = 0
-offset_left = 3.0
-offset_top = 155.0
-offset_right = 479.0
-offset_bottom = 172.0
+offset_left = 251.0
+offset_top = 238.0
+offset_right = 470.0
+offset_bottom = 255.0
 text = "COMPLOT FM 66 - 76"
+label_settings = SubResource("LabelSettings_7st8c")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label" type="Label" parent="CanvasLayer/Control/Inventory/Panel"]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 107.0
+offset_right = 193.0
+offset_bottom = 131.0
+text = "Frequency"
+label_settings = SubResource("LabelSettings_bv1s3")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control/Inventory" groups=["journal_inside"]]
 layout_mode = 0
-offset_left = 613.0
-offset_top = 124.0
-offset_right = 1100.0
-offset_bottom = 595.0
-theme = ExtResource("10_3h1t1")
+offset_left = 688.0
+offset_top = 110.0
+offset_right = 1024.0
+offset_bottom = 581.0
+theme_override_fonts/normal_font = ExtResource("6_v1iah")
 scroll_active = false
 scroll_following = true
 tab_size = 15
@@ -268,6 +278,9 @@ unit_size = 0.1
 autoplay = true
 
 [node name="transition" parent="." instance=ExtResource("11_7q8gp")]
+
+[node name="ColorRect" parent="transition" index="0"]
+material = SubResource("ShaderMaterial_xe2cg")
 
 [connection signal="timeout" from="CanvasLayer/Control/show_text/Timer" to="." method="_on_timer_timeout"]
 

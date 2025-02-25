@@ -9,21 +9,27 @@
 [ext_resource type="PackedScene" uid="uid://dyvkf1itavutm" path="res://Scene/Days/Day1/em_day_1.tscn" id="7_vxswh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_is71n"]
+sky_curve = 0.678472
+ground_bottom_color = Color(0.509804, 0.537255, 0.396078, 1)
 
 [sub_resource type="Sky" id="Sky_vfaw4"]
 sky_material = SubResource("ProceduralSkyMaterial_is71n")
+radiance_size = 2
 
 [sub_resource type="Environment" id="Environment_paq7g"]
 background_mode = 2
 sky = SubResource("Sky_vfaw4")
-ambient_light_color = Color(0.244776, 0.244776, 0.244776, 1)
-ambient_light_sky_contribution = 0.0
+ambient_light_sky_contribution = 0.21
 ambient_light_energy = 0.15
 ssao_radius = 3.49
 glow_normalized = true
 glow_intensity = 7.2
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.037
+volumetric_fog_density = 0.0738
+volumetric_fog_emission = Color(0.374139, 0.374139, 0.374139, 1)
+volumetric_fog_anisotropy = -0.51
+adjustment_enabled = true
+adjustment_saturation = 1.44
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2jnq7"]
 
@@ -96,7 +102,28 @@ texts = ["What is this place?"]
 
 [node name="em_day_1" parent="." instance=ExtResource("7_vxswh")]
 
+[node name="four2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(-4.37114e-08, 0, -2.1, 0, 1, 0, 1, 0, -9.17939e-08, 3.57509, -0.722322, -3.96604)
+one_shot = true
+is_text = true
+texts = ["I need to calm down"]
+
+[node name="tres2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(0.993824, 0, 0.233028, 0, 1, 0, -0.110966, 0, 2.08703, 13.2511, -0.722322, 4.38196)
+one_shot = true
+is_text = true
+texts = ["I hope I'll have enough food"]
+
+[node name="two2" parent="." instance=ExtResource("7_frxae")]
+transform = Transform3D(0.0101925, 0, -2.09989, 0, 1, 0, 0.999948, 0, 0.0214043, -3.59913, -0.722322, -1.12957)
+one_shot = true
+is_text = true
+texts = ["Hmm"]
+
 [editable path="one"]
 [editable path="two"]
 [editable path="tres"]
 [editable path="four"]
+[editable path="four2"]
+[editable path="tres2"]
+[editable path="two2"]

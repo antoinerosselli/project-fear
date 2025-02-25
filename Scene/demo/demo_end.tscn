@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdhd1n6lemc3h"]
+
+[ext_resource type="Theme" uid="uid://csapexuuln7nx" path="res://theme/uimenu.tres" id="1_ti7vd"]
+[ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_2aubk"]
+[ext_resource type="Script" path="res://Scene/demo/demo_end.gd" id="2_ej0fg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b20qq"]
+font = ExtResource("2_2aubk")
+font_size = 50
+font_color = Color(0.882353, 0.478431, 0.145098, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="DemoEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ti7vd")
+script = ExtResource("2_ej0fg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 652.0
+color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 165.0
+offset_right = 1071.0
+offset_bottom = 432.0
+text = "Thanks for playing this demo
+
+the complete version will be released in spring 2025"
+label_settings = SubResource("LabelSettings_b20qq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 517.0
+offset_right = 627.0
+offset_bottom = 557.0
+text = "QUIT"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
