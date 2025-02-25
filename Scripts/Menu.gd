@@ -2,6 +2,9 @@ extends Control
 
 @onready var credits = $credits
 
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func _on_quit_button_pressed():
 	get_tree().quit()
 
