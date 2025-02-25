@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="project-fear"
+config/name="Gaslighters"
 run/main_scene="res://Scene/bumpers.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Sprite/icon.svg"
+config/icon="res://icone.png"
 
 [autoload]
 

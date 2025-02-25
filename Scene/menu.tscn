@@ -13,9 +13,8 @@ shadow_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1rv5"]
 bg_color = Color(0.0195939, 0.0588438, 0.0306887, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_4fajt"]
-font_size = 20
-font_color = Color(0.815686, 0.447059, 0.145098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgydy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -25,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_sb1jo")
+script = ExtResource("3_2v8d6")
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
@@ -32,71 +32,68 @@ offset_left = 64.0
 offset_top = 64.0
 offset_right = 464.0
 offset_bottom = 152.0
-text = "Signals of Discord"
+text = "Gaslighters"
 label_settings = SubResource("LabelSettings_jfdc4")
 vertical_alignment = 1
 
 [node name="play_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 40.0
+offset_left = 64.0
 offset_top = 256.0
-offset_right = 288.0
+offset_right = 312.0
 offset_bottom = 311.0
 text = "play
 "
-script = ExtResource("3_2v8d6")
+alignment = 0
 
-[node name="play_button2" type="Button" parent="."]
+[node name="credit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 40.0
+offset_left = 64.0
 offset_top = 320.0
-offset_right = 288.0
+offset_right = 312.0
 offset_bottom = 375.0
 text = "credits
 "
-script = ExtResource("3_2v8d6")
+alignment = 0
 
 [node name="quit_button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 40.0
+offset_left = 64.0
 offset_top = 384.0
-offset_right = 288.0
+offset_right = 312.0
 offset_bottom = 439.0
 text = "quit
 "
+alignment = 0
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(1040, 544)
-scale = Vector2(0.541334, 0.556345)
+position = Vector2(1072, 568)
+scale = Vector2(0.354988, 0.37229)
 texture = ExtResource("3_lbxic")
 
 [node name="credits" type="Panel" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 256.0
-offset_right = 896.0
+offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j1rv5")
 
-[node name="Label" type="Label" parent="credits"]
+[node name="Label2" type="RichTextLabel" parent="credits"]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 64.0
-offset_right = 497.0
-offset_bottom = 85.0
-text = "- Experienced Junior -"
-label_settings = SubResource("LabelSettings_4fajt")
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 1088.0
+offset_bottom = 552.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hgydy")
+bbcode_enabled = true
+text = "[center]- Experienced Junior - [/center]
 
-[node name="Label2" type="Label" parent="credits"]
-layout_mode = 0
-offset_left = 184.0
-offset_top = 128.0
-offset_right = 504.0
-offset_bottom = 389.0
-text = "Antoine Rosselli
+
+
+Antoine Rosselli
 
 Pierrick Mahe
 
@@ -106,10 +103,42 @@ Liam Mottet
 
 Tom Lori 
 
-Marius Barthelemy"
-label_settings = SubResource("LabelSettings_4fajt")
-horizontal_alignment = 1
+Marius Barthelemy
 
-[connection signal="pressed" from="play_button" to="play_button" method="_on_pressed"]
-[connection signal="pressed" from="play_button2" to="play_button2" method="_on_pressed"]
-[connection signal="pressed" from="quit_button" to="play_button" method="_on_quit_button_pressed"]
+Romain Garcio
+
+
+
+3d Models from :
+
+\"Psx canned tomato soup\" (https://skfb.ly/oT9In) by Brainsick Games is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+\"PSX Style Trees\" (https://skfb.ly/pswGE) by wooolvie is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+
+https://rbgr.itch.io/psx-assets-aparment-pack
+
+https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
+
+https://sourpickle35.itch.io/psx-assets-wardrobe-kit-doors-drawers-interactable
+
+https://sourpickle35.itch.io/psx-assets-modular-survival-house
+
+https://sourpickle35.itch.io/psx-assets-old-oil-painting-kit
+
+https://sourpickle35.itch.io/psx-assets-home-furniture-kit-2
+
+https://sourpickle35.itch.io/psx-assets-balkan-interior-modular-props"
+autowrap_mode = 2
+
+[node name="CLOSE" type="Button" parent="credits"]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 576.0
+offset_right = 680.0
+offset_bottom = 616.0
+text = "CLOSE"
+
+[connection signal="pressed" from="play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="credit" to="." method="_on_credit_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="credits/CLOSE" to="." method="_on_close_pressed"]

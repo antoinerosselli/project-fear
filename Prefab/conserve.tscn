@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b66xcf4iuliyf"]
+[gd_scene load_steps=8 format=3 uid="uid://b66xcf4iuliyf"]
 
 [ext_resource type="Texture2D" uid="uid://bvedftgftbwbf" path="res://Sprite/rare-material-high-resolution-logo.png" id="1_3b1i8"]
 [ext_resource type="Texture2D" uid="uid://c2g03j5duu75f" path="res://Extern/Home kit 2/Textures/Water Jug/Water Jug_512.png" id="1_fyf7i"]
+[ext_resource type="PackedScene" uid="uid://bqt1clp8jnc1g" path="res://Extern/source/model.gltf" id="3_7yfbe"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kn3la"]
 height = 0.155733
@@ -27,3 +28,6 @@ shape = SubResource("CylinderShape3D_kn3la")
 transform = Transform3D(0.155183, 0, 0, 0, 0.0764416, 0, 0, 0, 0.165269, 0, 0.0637507, 0)
 material_override = SubResource("StandardMaterial3D_x2244")
 mesh = SubResource("CylinderMesh_i618m")
+
+[node name="blockbench_export" parent="." instance=ExtResource("3_7yfbe")]
+transform = Transform3D(0.311627, 0, 0, 0, 0.230172, 0, 0, 0, 0.30977, 0.00411547, -0.0179493, -0.00362142)

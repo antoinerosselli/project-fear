@@ -61,12 +61,16 @@ top_level = true
 stream = ExtResource("3_gpaep")
 unit_size = 1.0
 autoplay = true
+bus = &"Voice"
 
 [node name="Audio1" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
+bus = &"Voice"
 
 [node name="Audio2" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
+bus = &"Voice"
 
 [node name="Audio3" type="AudioStreamPlayer3D" parent="AudioStreamPlayer3D"]
+bus = &"Voice"
 
 [node name="Radio#NodeOfKnob" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.065, -0.03, 0.029)
