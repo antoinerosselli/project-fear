@@ -2121,11 +2121,14 @@ transform = Transform3D(0.31344, -2.32831e-10, -1.49012e-08, 4.65661e-10, 0.1820
 transform = Transform3D(1, 9.31323e-09, 0, 3.72529e-08, 1, -4.84288e-08, 2.38419e-07, -7.45058e-09, 1, 0.0680661, -0.480643, 0.0137329)
 
 [node name="RadioObj" parent="." instance=ExtResource("40_ijhvj")]
-transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.77569)
+transform = Transform3D(-0.0605607, 0, -0.998165, 0, 1, 0, 0.998165, 0, -0.0605607, 11.0933, -0.578161, -4.58302)
 
 [node name="Camera3D" parent="RadioObj/Radiooo" index="0"]
 transform = Transform3D(0.999877, 0.0144928, -0.0060679, -0.0139091, 0.996098, 0.0871556, 0.00730735, -0.0870605, 0.996176, 11.1035, -0.441262, -3.74333)
 fov = 69.6711
+
+[node name="Radio" parent="RadioObj/Radiooo" index="6"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 7.54979e-08, 3.72529e-09, -7.54979e-08, 1, -0.0245228, -0.164807, -0.0276365)
 
 [node name="MeshInstance3D35" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.411142, 0, 0, 0, 1, 0, 0, 0, 1, -0.397334, -0.0203705, -8.24764)
