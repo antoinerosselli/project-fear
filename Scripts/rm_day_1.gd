@@ -76,17 +76,16 @@ func check_radio_conditions():
 	#belle radio ==>
 	if time_elapsed >= 70 and time_elapsed <= 170:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day1/allonsmangerdesspag.mp3", "Hello...? Is anyone out there? Please, if you can hear me, respond...",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/hello !.mp3", "Hello...? Is anyone out there? Please, if you can hear me, respond...",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/allonsmangerdesspag.mp3", "You too... You've discovered that room, haven't you? What does all this mean?",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/You too .mp3", "You too... You've discovered that room, haven't you? What does all this mean?",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32  and time_elapsed > belle_time:
-			#change voice !!
-			play_radio_message("res://voice/day1/allonsmangerdesspag.mp3", "This is insane... Everything feels so strange. I must admit, I'm starting to get worried.",5, belle_color, "belle", 0)
+			play_radio_message("res://voice/day1/belle/This is insane.mp3", "This is insane... Everything feels so strange. I must admit, I'm starting to get worried.",5, belle_color, "belle", 0)
 	if time_elapsed >= 160 and time_elapsed <= 190:
 		if radio_value > 22 and radio_value < 32 :
-			play_radio_message("res://voice/day1/allonsmangerdesspag.mp3", "I hope you're holding up... I just received my ration. We have to stay strong. You're not alone.",5, belle_color, "belle", 6)
+			play_radio_message("res://voice/day1/belle/Hopeok.mp3", "I hope you're holding up... I just received my ration. We have to stay strong. You're not alone.",5, belle_color, "belle", 6)
 		if radio_value > 22 and radio_value < 32 and time_elapsed > belle_time:
-			play_radio_message("res://voice/day1/allonsmangerdesspag.mp3", "There are other people who communicate on the radio, try to get as much information as possible!",5, belle_color, "belle", 0)
+			play_radio_message("res://voice/day1/belle/Others.mp3", "There are other people who communicate on the radio, try to get as much information as possible!",5, belle_color, "belle", 0)
 
 
 	#Fanatic Radio ==>

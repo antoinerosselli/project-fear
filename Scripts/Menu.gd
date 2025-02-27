@@ -15,4 +15,4 @@ func _on_close_pressed():
 	credits.visible = false
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://Scene/Days/Day1/scene_day_1.tscn")
+	get_tree().change_scene_to_packed(load("res://Scene/Days/Day1/scene_day_1.tscn") as PackedScene)

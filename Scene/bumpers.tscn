@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/bumpers.gd" id="1_hxbka"]
 [ext_resource type="Texture2D" uid="uid://bau0dr758he5h" path="res://Sprite/logoEJ.png" id="2_i2yhk"]
-[ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Scene/neighing-of-a-horse-154724.mp3" id="3_muw33"]
+[ext_resource type="AudioStream" uid="uid://c3litgb4xotmv" path="res://Music&Sound/neighing-of-a-horse-154724.mp3" id="3_muw33"]
 
 [node name="Bumpers" type="Control"]
 layout_mode = 3

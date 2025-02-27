@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yu2f1pr7sqy0" path="res://Sprite/sancheck_nothing.png" id="2_i0dwy"]
 [ext_resource type="Texture2D" uid="uid://d3032663aaeae" path="res://Extern/Abandoned_House/Abandoned_House_Tela2.jpg" id="3_ptw6x"]
 [ext_resource type="Texture2D" uid="uid://c2eoqtv07yx1q" path="res://Extern/Abandoned_House/Textures/Cables.jpg" id="4_fpe5s"]
-[ext_resource type="Script" path="res://Prefab/sancheck_img.gd" id="6_hvrci"]
+[ext_resource type="Script" path="res://Scripts/sancheck_img.gd" id="6_hvrci"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_424yb"]
 albedo_texture = ExtResource("2_60fxv")

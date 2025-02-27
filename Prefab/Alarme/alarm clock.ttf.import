@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://ce3an0yfkfats"
-path="res://.godot/imported/BD Times_New_Digital_St_Bold.otf-dddab284efa4360d379c3bc71cb7a4ad.fontdata"
+uid="uid://c4slo7siafa6k"
+path="res://.godot/imported/alarm clock.ttf-67b4f7c01891f2be392ec8345d9d9e34.fontdata"
 
 [deps]
 
-source_file="res://Alarme/BD Times_New_Digital_St_Bold.otf"
-dest_files=["res://.godot/imported/BD Times_New_Digital_St_Bold.otf-dddab284efa4360d379c3bc71cb7a4ad.fontdata"]
+source_file="res://Prefab/Alarme/alarm clock.ttf"
+dest_files=["res://.godot/imported/alarm clock.ttf-67b4f7c01891f2be392ec8345d9d9e34.fontdata"]
 
 [params]
 

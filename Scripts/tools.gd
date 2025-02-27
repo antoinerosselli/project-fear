@@ -105,7 +105,7 @@ func sound_now(here: Node3D, what_sound: AudioStream):
 		
 	var audio_player = AudioStreamPlayer3D.new()
 	audio_player.stream = what_sound
-	audio_player.global_position = here.global_position 
+	audio_player.global_position = here.get_global_position()
 	audio_player.autoplay = true 
 	audio_player.finished.connect(func(): audio_player.queue_free())
 

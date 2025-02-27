@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://dao3wel0w0dk"]
 
-[ext_resource type="Texture2D" uid="uid://croasvqy3hps6" path="res://model_House/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png" id="1_2453p"]
+[ext_resource type="Texture2D" uid="uid://croasvqy3hps6" path="res://Model_House/toro_console_secureroom-8da362f44406849df4f8bffe0e8ddc9a_color_console_secureroom.png" id="1_2453p"]
 [ext_resource type="Texture2D" uid="uid://dvc6towuw2xcn" path="res://Extern/Abandoned_House/Textures/Cabinet.png" id="1_h52et"]
 [ext_resource type="PackedScene" uid="uid://1qetcicfegqf" path="res://Prefab/interrupteur.tscn" id="2_oqw72"]
 

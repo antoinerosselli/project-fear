@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dyvkf1itavutm"]
 
-[ext_resource type="Script" path="res://Scene/Days/Day1/em_day_1.gd" id="1_1ttpx"]
+[ext_resource type="Script" path="res://Scripts/em_day_1.gd" id="1_1ttpx"]
+
 
 [node name="em_day_1" type="Node" groups=["event_manager"]]
 script = ExtResource("1_1ttpx")

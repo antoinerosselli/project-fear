@@ -1,8 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://dee4yq0rea45s"]
 
-[ext_resource type="Script" path="res://Prefab/transition_setup.gd" id="1_qfohy"]
+[ext_resource type="Script" path="res://Scripts/transition_setup.gd" id="1_qfohy"]
 [ext_resource type="FontFile" uid="uid://bodh18uace0u0" path="res://Extern/FONT/suikoden-monospaced.ttf" id="2_3fkm3"]
 [ext_resource type="Shader" path="res://Shader/tr.gdshader" id="2_4yamf"]
+
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vhaag"]
 resource_local_to_scene = true
